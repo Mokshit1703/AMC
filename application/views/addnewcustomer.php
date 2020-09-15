@@ -9,7 +9,7 @@
                         <div class="card">
                           <div class="card-body">
                             <h6 class="card-title"><h1>Add New Customer:</h1></h6><br>
-                              <form>
+                              <form method="post" action="<?php echo base_url().'/index.php/welcome/addnewcustomer/';?>">
                                 <div class="row">
                                   <div class="col-sm-6 ">
                                     <div class="form-group">

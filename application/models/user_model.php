@@ -6,7 +6,7 @@
             $this->load->view('index/'.$index, $data);
         }
         function addnewcustomer($formarray){
-            $this->db->insert('AMC',$formarray);
+            $this->db->insert('new_customer',$formarray);
         }
     }
 ?>

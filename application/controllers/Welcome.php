@@ -15,7 +15,7 @@ class Welcome extends CI_Controller {
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
+	 * map to /index.php/welcome/<method_mobile_no>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function dashboard()
@@ -40,25 +40,25 @@ class Welcome extends CI_Controller {
                 //  save user to database.
 
                 $formarray=array();
-                $formarray['name']= $this->input->post('name');
+                $formarray['mobile_no']= $this->input->post('mobile_no');
+				$formarray['customer_code']= $this->input->post('customer_code');
+				$formarray['customer_name']= $this->input->post('customer_name');
+				$formarray['company_name']= $this->input->post('company_name');
+				$formarray['customer_type']= $this->input->post('customer_type');
+				$formarray['address']= $this->input->post('address');
+				$formarray['city']= $this->input->post('city');
+				$formarray['state']= $this->input->post('state');
+				$formarray['zip']= $this->input->post('zip');
+				$formarray['alt_phone']= $this->input->post('alt_phone');
 				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
-				$formarray['email']= $this->input->post('email');
+				$formarray['password']= $this->input->post('password');
+				$formarray['note']= $this->input->post('note');
+				$formarray['select_file']= $this->input->post('select_file');
 				
                 
                 $this->User_model->addnewcustomer($formarray);
                 $this->session->set_flashdata('success','Record added successfully!');
-                redirect(base_url().'index.php/welcome/index');
+                redirect(base_url().'/AMC/index.php/welcome/addnewcustomer');
             
         
 	}
