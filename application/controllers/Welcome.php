@@ -57,6 +57,130 @@ class Welcome extends CI_Controller {
                 redirect(base_url().'index.php/welcome/addnewexecutive');
 		}
 	}
+	public function addproduct(){
+		$this->load->model('User_model');
+		$this->form_validation->set_rules('executive_code', 'Executive Code','required');
+		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
+		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
+		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('address', 'Address','required');
+		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
+		$this->form_validation->set_rules('password', 'Password','required');
+
+		if ($this->form_validation->run()== false){
+			$this->load->view('addproduct');
+		}
+		else 
+		{
+			//  save user to database.
+
+                $formarray=array();
+				$formarray['executive_code']= $this->input->post('executive_code');
+				$formarray['executive_name']= $this->input->post('executive_name');
+				$formarray['executive_type']= $this->input->post('executive_type');
+				$formarray['email']= $this->input->post('email');
+				$formarray['address']= $this->input->post('address');
+                $formarray['mobile_no']= $this->input->post('mobile_no');
+				$formarray['password']= $this->input->post('password');
+
+				$this->User_model->manage_product($formarray);
+                $this->session->set_flashdata('success','Record added successfully!');
+                redirect(base_url().'index.php/welcome/addproduct');
+		}
+	}
+	public function addproductgroup(){
+		$this->load->model('User_model');
+		$this->form_validation->set_rules('executive_code', 'Executive Code','required');
+		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
+		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
+		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('address', 'Address','required');
+		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
+		$this->form_validation->set_rules('password', 'Password','required');
+
+		if ($this->form_validation->run()== false){
+			$this->load->view('addproductgroup');
+		}
+		else 
+		{
+			//  save user to database.
+
+                $formarray=array();
+				$formarray['executive_code']= $this->input->post('executive_code');
+				$formarray['executive_name']= $this->input->post('executive_name');
+				$formarray['executive_type']= $this->input->post('executive_type');
+				$formarray['email']= $this->input->post('email');
+				$formarray['address']= $this->input->post('address');
+                $formarray['mobile_no']= $this->input->post('mobile_no');
+				$formarray['password']= $this->input->post('password');
+
+				$this->User_model->manage_product_group($formarray);
+                $this->session->set_flashdata('success','Record added successfully!');
+                redirect(base_url().'index.php/welcome/addproductgroup');
+		}
+	}
+	public function addproductmodel(){
+		$this->load->model('User_model');
+		$this->form_validation->set_rules('executive_code', 'Executive Code','required');
+		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
+		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
+		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('address', 'Address','required');
+		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
+		$this->form_validation->set_rules('password', 'Password','required');
+
+		if ($this->form_validation->run()== false){
+			$this->load->view('addproductmodel');
+		}
+		else 
+		{
+			//  save user to database.
+
+                $formarray=array();
+				$formarray['executive_code']= $this->input->post('executive_code');
+				$formarray['executive_name']= $this->input->post('executive_name');
+				$formarray['executive_type']= $this->input->post('executive_type');
+				$formarray['email']= $this->input->post('email');
+				$formarray['address']= $this->input->post('address');
+                $formarray['mobile_no']= $this->input->post('mobile_no');
+				$formarray['password']= $this->input->post('password');
+
+				$this->User_model->manage_product_model($formarray);
+                $this->session->set_flashdata('success','Record added successfully!');
+                redirect(base_url().'index.php/welcome/addproductmodel');
+		}
+	}
+	public function addproductserial(){
+		$this->load->model('User_model');
+		$this->form_validation->set_rules('executive_code', 'Executive Code','required');
+		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
+		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
+		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('address', 'Address','required');
+		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
+		$this->form_validation->set_rules('password', 'Password','required');
+
+		if ($this->form_validation->run()== false){
+			$this->load->view('addproductserial');
+		}
+		else 
+		{
+			//  save user to database.
+
+                $formarray=array();
+				$formarray['executive_code']= $this->input->post('executive_code');
+				$formarray['executive_name']= $this->input->post('executive_name');
+				$formarray['executive_type']= $this->input->post('executive_type');
+				$formarray['email']= $this->input->post('email');
+				$formarray['address']= $this->input->post('address');
+                $formarray['mobile_no']= $this->input->post('mobile_no');
+				$formarray['password']= $this->input->post('password');
+
+				$this->User_model->manage_product_serial($formarray);
+                $this->session->set_flashdata('success','Record added successfully!');
+                redirect(base_url().'index.php/welcome/addproductserial');
+		}
+	}
 	function addnewcustomer(){
 		$this->load->model('User_model');
 
