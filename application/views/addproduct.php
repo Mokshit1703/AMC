@@ -7,48 +7,48 @@
                 <div class="col-md-12 stretch-card">
                     <div class="card card-custom">
                         <div class="card-body">
-                            <h6 class="card-title"><h1>Add New Executive:</h1></h6><br>
-                            <form method="post" action="<?php echo base_url().'index.php/welcome/addnewexecutive';?>">
+                            <h6 class="card-title"><h1>Add Product</h1></h6><br>
+                            <form method="post" action="<?php echo base_url().'index.php/welcome/addproduct';?>">
                               <div class="row">
                                 <div class="col-xl-1">
                                 </div>
                                   <div class="col-lg-5 my-2 ">
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Executive Code</h4></label>
-                                      <input type="text" name="executive_code" class="form-control border-dark" placeholder="Enter Executive" value= "<?php echo set_value('executive_code');?>">
-                                      <?php echo form_error('executive_code');?>
+                                      <label class="control-label"><h4>Product Code</h4></label>
+                                      <input type="text" name="product_code" class="form-control border-dark" placeholder="Enter Product Code" value= "<?php echo set_value('product_code');?>">
+                                      <?php echo form_error('product_code');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Executive Name</h4></label>
-                                      <input type="text" name="executive_name" class="form-control border-dark" placeholder="Enter Executive" value= "<?php echo set_value('executive_name');?>">
-                                      <?php echo form_error('executive_name');?>
+                                      <label class="control-label"><h4>Product Brand</h4></label>
+                                      <input type="text" name="product_brand" class="form-control border-dark" placeholder="Enter Product Brand" value= "<?php echo set_value('product_brand');?>">
+                                      <?php echo form_error('product_brand');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Executive Type</h4></label>
-                                      <input type="text" name="executive_type" class="form-control border-dark" placeholder="Enter Executive" value= "<?php echo set_value('executive_type');?>">
-                                      <?php echo form_error('executive_type');?>
+                                      <label class="control-label"><h4>Product Name</h4></label>
+                                      <input type="text" name="product_name" class="form-control border-dark" placeholder="Enter Product Name" value= "<?php echo set_value('product_name');?>">
+                                      <?php echo form_error('product_name');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Email Address</h4></label>
-                                      <input type="text" name="email" class="form-control border-dark" placeholder="Enter Executive" value= "<?php echo set_value('email');?>">
-                                      <?php echo form_error('email');?>
+                                      <label class="control-label"><h4>Product Unit</h4></label>
+                                      <input type="text" name="product_unit" class="form-control border-dark" placeholder="Enter Product Unit" value= "<?php echo set_value('product_unit');?>">
+                                      <?php echo form_error('product_unit');?>
                                     </div>
                                   </div><!-- Col -->
                                   <div class="col-lg-5 my-2 ">
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Address</h4></label>
-                                      <textarea rows="4" name="address" type="text" class="form-control border-dark" placeholder="Enter Address" value= "<?php echo set_value('address');?>"></textarea>
-                                      <?php echo form_error('address');?>
+                                      <label class="control-label"><h4>Product Details</h4></label>
+                                      <textarea rows="4" name="product_details" type="text" class="form-control border-dark" placeholder="Enter Product Details" value= "<?php echo set_value('product_details');?>"></textarea>
+                                      <?php echo form_error('product_details');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Mobile No.</h4></label>
-                                      <input type="text" name="mobile_no" class="form-control border-dark" placeholder="Enter Executive" value= "<?php echo set_value('mobile_no');?>">
-                                      <?php echo form_error('mobile_no');?>
+                                      <label class="control-label"><h4>Product Warranty</h4></label>
+                                      <input type="text" name="product_warranty" class="form-control border-dark" placeholder="Enter Product Warranty" value= "<?php echo set_value('product_warranty');?>">
+                                      <?php echo form_error('product_warranty');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Password</h4></label>
-                                      <input type="text" name="password" class="form-control border-dark" placeholder="Enter Executive" value= "<?php echo set_value('password');?>">
-                                      <?php echo form_error('password');?>
+                                      <label class="control-label"><h4>Product Image</h4></label>
+                                      <input type="text" name="product_image" class="form-control border-dark" placeholder="Enter Product Image" value= "<?php echo set_value('product_image');?>">
+                                      <?php echo form_error('product_image');?>
                                     </div>
                                     
                                   </div><!-- Col -->
@@ -57,7 +57,7 @@
                               </div>                
                             <div class="form-group align-center">
                             <button  class="btn btn-primary "><h4>Submit</h4></button>    
-                            <a href="<?php echo base_url().'index.php/welcome/addnewexecutive';?>" class="btn-secondary btn"><h4>Reset</h4></a>
+                            <a href="<?php echo base_url().'index.php/welcome/addproduct';?>" class="btn-secondary btn"><h4>Reset</h4></a>
                             </div>
                             </form>
                         </div>

@@ -59,13 +59,13 @@ class Welcome extends CI_Controller {
 	}
 	public function addproduct(){
 		$this->load->model('User_model');
-		$this->form_validation->set_rules('executive_code', 'Executive Code','required');
-		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
-		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
-		$this->form_validation->set_rules('email', 'Email','required|valid_email');
-		$this->form_validation->set_rules('address', 'Address','required');
-		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
-		$this->form_validation->set_rules('password', 'Password','required');
+		$this->form_validation->set_rules('product_code', 'Product Code','required');
+		$this->form_validation->set_rules('product_brand', 'Product Brand','required');
+		$this->form_validation->set_rules('product_name', 'Product Name','required');
+		$this->form_validation->set_rules('product_unit', 'Product Unit','required');
+		$this->form_validation->set_rules('product_details', 'Product Details','required');
+		$this->form_validation->set_rules('product_warranty', 'Product Warranty','required');
+		$this->form_validation->set_rules('product_image', 'Product Image','required');
 
 		if ($this->form_validation->run()== false){
 			$this->load->view('addproduct');
@@ -75,15 +75,15 @@ class Welcome extends CI_Controller {
 			//  save user to database.
 
                 $formarray=array();
-				$formarray['executive_code']= $this->input->post('executive_code');
-				$formarray['executive_name']= $this->input->post('executive_name');
-				$formarray['executive_type']= $this->input->post('executive_type');
-				$formarray['email']= $this->input->post('email');
-				$formarray['address']= $this->input->post('address');
-                $formarray['mobile_no']= $this->input->post('mobile_no');
-				$formarray['password']= $this->input->post('password');
+				$formarray['product_code']= $this->input->post('product_code');
+				$formarray['product_brand']= $this->input->post('product_brand');
+				$formarray['product_name']= $this->input->post('product_name');
+				$formarray['product_unit']= $this->input->post('product_unit');
+				$formarray['product_details']= $this->input->post('product_details');
+                $formarray['product_warranty']= $this->input->post('product_warranty');
+				$formarray['product_image']= $this->input->post('product_image');
 
-				$this->User_model->manage_product($formarray);
+				$this->User_model->addproduct($formarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproduct');
 		}
@@ -114,21 +114,17 @@ class Welcome extends CI_Controller {
                 $formarray['mobile_no']= $this->input->post('mobile_no');
 				$formarray['password']= $this->input->post('password');
 
-				$this->User_model->manage_product_group($formarray);
+				$this->User_model->addproductgroup($formarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproductgroup');
 		}
 	}
 	public function addproductmodel(){
 		$this->load->model('User_model');
-		$this->form_validation->set_rules('executive_code', 'Executive Code','required');
-		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
-		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
-		$this->form_validation->set_rules('email', 'Email','required|valid_email');
-		$this->form_validation->set_rules('address', 'Address','required');
-		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
-		$this->form_validation->set_rules('password', 'Password','required');
-
+		$this->form_validation->set_rules('product_model_code', 'Product Model Code','required');
+		$this->form_validation->set_rules('product_model_name', 'Product Model Name','required');
+		$this->form_validation->set_rules('select_product', 'Select Product','required');
+		
 		if ($this->form_validation->run()== false){
 			$this->load->view('addproductmodel');
 		}
@@ -137,29 +133,22 @@ class Welcome extends CI_Controller {
 			//  save user to database.
 
                 $formarray=array();
-				$formarray['executive_code']= $this->input->post('executive_code');
-				$formarray['executive_name']= $this->input->post('executive_name');
-				$formarray['executive_type']= $this->input->post('executive_type');
-				$formarray['email']= $this->input->post('email');
-				$formarray['address']= $this->input->post('address');
-                $formarray['mobile_no']= $this->input->post('mobile_no');
-				$formarray['password']= $this->input->post('password');
-
-				$this->User_model->manage_product_model($formarray);
+				$formarray['product_model_code']= $this->input->post('product_model_code');
+				$formarray['product_model_name']= $this->input->post('product_model_name');
+				$formarray['select_product']= $this->input->post('select_product');
+				
+				$this->User_model->addproductmodel($formarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproductmodel');
 		}
 	}
 	public function addproductserial(){
 		$this->load->model('User_model');
-		$this->form_validation->set_rules('executive_code', 'Executive Code','required');
-		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
-		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
-		$this->form_validation->set_rules('email', 'Email','required|valid_email');
-		$this->form_validation->set_rules('address', 'Address','required');
-		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
-		$this->form_validation->set_rules('password', 'Password','required');
-
+		$this->form_validation->set_rules('product_serial_code', 'Product Serial Code','required');
+		$this->form_validation->set_rules('product_model', 'Product Model','required');
+		$this->form_validation->set_rules('product_name', 'Product ame','required');
+		$this->form_validation->set_rules('product_price', 'Product Price','required');
+		
 		if ($this->form_validation->run()== false){
 			$this->load->view('addproductserial');
 		}
@@ -168,15 +157,12 @@ class Welcome extends CI_Controller {
 			//  save user to database.
 
                 $formarray=array();
-				$formarray['executive_code']= $this->input->post('executive_code');
-				$formarray['executive_name']= $this->input->post('executive_name');
-				$formarray['executive_type']= $this->input->post('executive_type');
-				$formarray['email']= $this->input->post('email');
-				$formarray['address']= $this->input->post('address');
-                $formarray['mobile_no']= $this->input->post('mobile_no');
-				$formarray['password']= $this->input->post('password');
-
-				$this->User_model->manage_product_serial($formarray);
+				$formarray['product_serial_code']= $this->input->post('product_serial_code');
+				$formarray['product_model']= $this->input->post('product_model');
+				$formarray['product_name']= $this->input->post('product_name');
+				$formarray['product_price']= $this->input->post('product_price');
+				
+				$this->User_model->addproductserial($formarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproductserial');
 		}

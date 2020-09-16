@@ -5,7 +5,7 @@
 <div class="page-content">
                 <nav class="page-breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Product Serial</a></li>
+						<li class="breadcrumb-item"><a href="#">Product</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Manage Product Serial</li>
 					</ol>
 				</nav>
@@ -20,12 +20,10 @@
                                 <thead>
                                     <tr>
                                         <th>Product Serial Code</th>
-                                        <th>Product Serial Name</th>
-                                        <th>Product Serial Type</th>
-                                        <th>Email</th>
-                                        <th>Address</th>
-                                        <th>Mobile No.</th>
-                                        <th>Password</th>
+                                        <th>Product Model</th>
+                                        <th>Product Name</th>
+                                        <th>Product Price</th>
+                                        
                                         <th>Status</th>
                                         <th>Function</th>
                                     </tr>
@@ -33,13 +31,11 @@
                                 <tbody>
                                 <?php if(!empty($new_product_serial)) { foreach($new_product_serial as $user){?>
                                 <tr>
-                                    <td><?php echo $user['Product Serial_code'] ?></td>
-                                    <td><?php echo $user['Product Serial_name'] ?></td>
-                                    <td><?php echo $user['email'] ?></td>
-                                    <td><?php echo $user['Product Serial_type'] ?></td>
-                                    <td><?php echo $user['address'] ?></td>
-                                    <td><?php echo $user['mobile_no'] ?></td>
-                                    <td><?php echo $user['password'] ?></td>
+                                    <td><?php echo $user['product_serial_code'] ?></td>
+                                    <td><?php echo $user['product_model'] ?></td>
+                                    <td><?php echo $user['product_name'] ?></td>
+                                    <td><?php echo $user['product_price'] ?></td>
+                                    
                                     <td><?php echo "status"?></td>
                                     <td><?php echo "function" ?></td>
                                 </tr>
