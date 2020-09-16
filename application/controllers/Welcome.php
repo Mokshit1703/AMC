@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('index');
 	}
 	function addnewcustomer(){
-		$this->load->model('user_model');
+		$this->load->model('User_model');
 
 		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
 		$this->form_validation->set_rules('customer_code', 'Customer Code','required');
@@ -67,14 +67,18 @@ class Welcome extends CI_Controller {
 				$formarray['select_file']= $this->input->post('select_file');
 				
                 
-                $this->user_model->addnewcustomer($formarray);
+                $this->User_model->addnewcustomer($formarray);
                 $this->session->set_flashdata('success','Record added successfully!');
-                redirect(base_url().'/AMC/index.php/welcome/addnewcustomer');
+                redirect(base_url().'index.php/welcome/addnewcustomer');
 		}
         
 	}
 	public function managecustomer()
 	{
-	$this->load->view('managecustomer');
+		$this->load->model('User_model');
+		$new_customer = $this->User_model->managecustomer();
+		$data = array();
+		$data['new_customer']= $new_customer;
+		$this->load->view('managecustomer',$data);
 	}
 }

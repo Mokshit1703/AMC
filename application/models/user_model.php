@@ -8,5 +8,8 @@
         function addnewcustomer($formarray){
             $this->db->insert('new_customer',$formarray);
         }
+        function managecustomer(){
+            return $new_customer = $this->db->get('new_customer')->result_array();
+        }
     }
 ?>

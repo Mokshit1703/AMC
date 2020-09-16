@@ -31,17 +31,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php if(!empty($new_customer)) { foreach($new_customer as $user){?>
                                 <tr>
-                                    <td>012</td>
-                                    <td>Tiger Nixon</td>
-                                    <td>tiger@gmail.com</td>
-                                    <td>Free</td>
-                                    <td>Edinburgh, west indies</td>
-                                    <td>9898586525</td>
-                                    <td>61564892</td>
-                                    <td>status</td>
-                                    <td>function</td>
+                                    <td><?php echo $user['customer_code'] ?></td>
+                                    <td><?php echo $user['customer_name'] ?></td>
+                                    <td><?php echo $user['email'] ?></td>
+                                    <td><?php echo $user['customer_type'] ?></td>
+                                    <td><?php echo $user['address'] ?></td>
+                                    <td><?php echo $user['mobile_no'] ?></td>
+                                    <td><?php echo $user['password'] ?></td>
+                                    <td><?php echo "status"; ?></td>
+                                    <td><?php echo "function" ?></td>
                                 </tr>
+                                <?php } } else { ?>
+                                <tr>
+                                    <td colspan="5">Records not found</td>
+                                </tr>
+                                <?php } ?>
                                </tbody>
                             </table>
                             </div>
