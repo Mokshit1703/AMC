@@ -120,4 +120,36 @@ class Welcome extends CI_Controller {
 		$data['new_executive']= $new_executive;
 		$this->load->view('manageexecutive',$data);
 	}
+	public function manage_product()
+	{
+		$this->load->model('User_model');
+		$new_product = $this->User_model->manage_product();
+		$data = array();
+		$data['new_product']= $new_product;
+		$this->load->view('manage_product',$data);
+	}
+	public function manage_product_group()
+	{
+		$this->load->model('User_model');
+		$new_product_group = $this->User_model->manage_product_group();
+		$data = array();
+		$data['new_product_group']= $new_product_group;
+		$this->load->view('manage_product_group',$data);
+	}
+	public function manage_product_model()
+	{
+		$this->load->model('User_model');
+		$new_product_model = $this->User_model->manage_product_model();
+		$data = array();
+		$data['new_product_model']= $new_product_model;
+		$this->load->view('manage_product_model',$data);
+	}
+	public function manage_product_serial()
+	{
+		$this->load->model('User_model');
+		$new_product_serial = $this->User_model->manage_product_serial();
+		$data = array();
+		$data['new_product_serial']= $new_product_serial;
+		$this->load->view('manage_product_serial',$data);
+	}
 }
