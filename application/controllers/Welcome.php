@@ -26,18 +26,29 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
-	public function addnewcustomer()
-	{
-		
-		
-            $this->load->model('User_model');
+	function addnewcustomer(){
+		$this->load->model('user_model');
 
-           
-            
-                $this->load->view('addnewcustomer');
-            
-             
-                //  save user to database.
+		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
+		$this->form_validation->set_rules('customer_code', 'Customer Code','required');
+		$this->form_validation->set_rules('customer_name', 'Customer Name','required');
+		$this->form_validation->set_rules('company_name', 'Company Name','required');
+		$this->form_validation->set_rules('customer_type', 'Customer Type','required');
+		$this->form_validation->set_rules('address', 'Address','required');
+		$this->form_validation->set_rules('city', 'City','required');
+		$this->form_validation->set_rules('state', 'State','required');
+		$this->form_validation->set_rules('zip', 'Zip/Postal Code','required');
+		$this->form_validation->set_rules('alt_phone', 'Alternate Phone No','required');
+		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('password', 'Password','required');
+		$this->form_validation->set_rules('note', 'Note');
+		$this->form_validation->set_rules('select_file', 'File');
+
+		if ($this->form_validation->run()== false){
+			$this->load->view('addnewcustomer');
+		}
+		else {
+			//  save user to database.
 
                 $formarray=array();
                 $formarray['mobile_no']= $this->input->post('mobile_no');
@@ -56,10 +67,10 @@ class Welcome extends CI_Controller {
 				$formarray['select_file']= $this->input->post('select_file');
 				
                 
-                $this->User_model->addnewcustomer($formarray);
+                $this->user_model->addnewcustomer($formarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'/AMC/index.php/welcome/addnewcustomer');
-            
+		}
         
 	}
 	public function managecustomer()
