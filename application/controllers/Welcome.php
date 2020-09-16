@@ -26,6 +26,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+	public function addnewexecutive()
+	{
+		$this->load->view('addnewexecutive');
+	}
 	function addnewcustomer(){
 		$this->load->model('User_model');
 
