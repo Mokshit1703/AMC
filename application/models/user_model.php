@@ -11,8 +11,13 @@
         function managecustomer(){
             return $new_customer = $this->db->get('new_customer')->result_array();
         }
-        function addnewexecutive($formarray){
+        function manageexecutive(){
+            return $new_executive = $this->db->get('new_executive')->result_array();
+        }
+        function addnewexecutive($formarray)
+        {
             $this->db->insert('new_executive',$formarray);
+            //$this->db->insert('new_executive',$formarray);
         }
     }
 ?>

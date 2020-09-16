@@ -10,20 +10,20 @@
           <div class="card card-custom">
             <div class="card-body">
               <h6 class="card-title"><h1>Add New Customer:</h1></h6><br>
-              <form method="post" name="addnewcustomer" action="http://localhost/AMC/index.php/welcome/addnewcustomer">
+              <form method="post" name="addnewcustomer" action="<?php echo base_url().'index.php/welcome/addnewcustomer';?>">
                                   <div class="row">
                                     <div class="col-xl-1">
                                     </div>
                                     <div class="col-lg-5 my-2 ">
                                       <div class="form-group">
-                                        <label class="control-label"><h4>Mobile no:</h4></label>
+                                        <label class="control-label"><h4>Mobile no.</h4></label>
                                         <input type="number" name="mobile_no" class="form-control border-dark" placeholder="Enter Mobile No" value= "<?php echo set_value('mobile_no');?>">
                                         <?php echo form_error('mobile_no');?>
                                       </div>
                                     </div><!-- Col -->
                                     <div class="col-lg-5 my-2 ">
                                       <div class="form-group">
-                                        <label class="control-label"><h4>Customer Code:</h4></label>
+                                        <label class="control-label"><h4>Customer Code</h4></label>
                                         <input type="text" name="customer_code" class="form-control border-dark" placeholder="Enter Customer Code" value= "<?php echo set_value('customer_code');?>">
                                         <?php echo form_error('customer_code');?>
                                       </div>

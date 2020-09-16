@@ -40,7 +40,7 @@
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['mobile_no'] ?></td>
                                     <td><?php echo $user['password'] ?></td>
-                                    <td><?php echo "status"; ?></td>
+                                    <td><?php echo "status" ?></td>
                                     <td><?php echo "function" ?></td>
                                 </tr>
                                 <?php } } else { ?>

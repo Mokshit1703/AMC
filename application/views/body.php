@@ -81,7 +81,9 @@
                 </li>
                 <li class="nav-item">
                   <a href="/AMC/index.php/welcome/addproductserial" class="nav-link">Add Product Serial</a>
-                </li>
+				</li>
+				<div class="separator separator-dashed my-10">
+                </div>
                 <li class="nav-item">
                   <a href="/AMC/index.php/welcome/manageproductgroup" class="nav-link">Manage Product Group</a>
                 </li>
