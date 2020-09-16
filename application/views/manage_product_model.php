@@ -5,8 +5,8 @@
 <div class="page-content">
                 <nav class="page-breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Executive</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Manage Executive</li>
+						<li class="breadcrumb-item"><a href="#">Product Model</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Manage Product Model</li>
 					</ol>
 				</nav>
 
@@ -14,14 +14,14 @@
 					<div class="col-md-12 grid-margin stretch-card">
                         <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Manage Executive</h6>
+                            <h6 class="card-title">Manage Product Model</h6>
                             <div class="table-responsive">
                             <table id="dataTableExample" class="table">
                                 <thead>
                                     <tr>
-                                        <th>Executive Code</th>
-                                        <th>Executive Name</th>
-                                        <th>Executive Type</th>
+                                        <th>Product Model Code</th>
+                                        <th>Product Model Name</th>
+                                        <th>Product Model Type</th>
                                         <th>Email</th>
                                         <th>Address</th>
                                         <th>Mobile No.</th>
@@ -31,12 +31,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php if(!empty($new_executive)) { foreach($new_executive as $user){?>
+                                <?php if(!empty($new_product_model)) { foreach($new_product_model as $user){?>
                                 <tr>
-                                    <td><?php echo $user['executive_code'] ?></td>
-                                    <td><?php echo $user['executive_name'] ?></td>
+                                    <td><?php echo $user['Product Model_code'] ?></td>
+                                    <td><?php echo $user['Product Model_name'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
-                                    <td><?php echo $user['executive_type'] ?></td>
+                                    <td><?php echo $user['Product Model_type'] ?></td>
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['mobile_no'] ?></td>
                                     <td><?php echo $user['password'] ?></td>

@@ -8,7 +8,7 @@
                     <div class="card card-custom">
                         <div class="card-body">
                             <h6 class="card-title"><h1>Add New Executive:</h1></h6><br>
-                            <form method="post" action="<?php echo base_url().'index.php/welcome/addnewexecutive';?>">
+                            <form method="post" action="<?php echo base_url().'index.php/welcome/addproductserial';?>">
                               <div class="row">
                                 <div class="col-xl-1">
                                 </div>
@@ -57,7 +57,7 @@
                               </div>                
                             <div class="form-group align-center">
                             <button  class="btn btn-primary "><h4>Submit</h4></button>    
-                            <a href="<?php echo base_url().'index.php/welcome/addnewexecutive';?>" class="btn-secondary btn"><h4>Reset</h4></a>
+                            <a href="<?php echo base_url().'index.php/welcome/addproductserial';?>" class="btn-secondary btn"><h4>Reset</h4></a>
                             </div>
                             </form>
                         </div>
