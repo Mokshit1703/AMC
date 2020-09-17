@@ -226,7 +226,7 @@ class Welcome extends CI_Controller {
 
             if($this->form_validation->run() == false)
             {
-                $this->load->view('edit_customer',$data);
+                $this->load->view('Edit_customer',$data);
             }
             else
             {
@@ -282,7 +282,7 @@ class Welcome extends CI_Controller {
 
             if($this->form_validation->run() == false)
             {
-                $this->load->view('edit',$data);
+                $this->load->view('edit_executive',$data);
             }
             else
             {

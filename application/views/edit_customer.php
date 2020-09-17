@@ -10,7 +10,7 @@
           <div class="card card-custom">
             <div class="card-body">
               <h6 class="card-title"><h1>Add New Customer:</h1></h6><br>
-              <form method="post" name="addnewcustomer" action="<?php echo base_url().'index.php/welcome/edit_customer/'. $user['sr_no'];?>">
+              <form method="post" name="addnewcustomer" action="<?php echo base_url().'index.php/welcome/Edit_customer/'. $user['sr_no'];?>">
                                   <div class="row">
                                     <div class="col-xl-1">
                                     </div>
