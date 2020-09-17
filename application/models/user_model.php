@@ -2,7 +2,7 @@
 
     class User_model extends CI_model{
 
-        function index($formarray,$index,$data){
+        function index($fromarray,$index,$data){
             $this->load->view('index/'.$index, $data);
         }
         function managecustomer(){
@@ -23,115 +23,115 @@
         function manage_product_serial(){
             return $new_product_serial = $this->db->get('new_product_serial')->result_array();
         }
-        function addnewcustomer($formarray){
-            $this->db->insert('new_customer',$formarray);
+        function addnewcustomer($fromarray){
+            $this->db->insert('new_customer',$fromarray);
         }
-        function addproductgroup($formarray){
-            $this->db->insert('new_product_group',$formarray);
+        function addproductgroup($fromarray){
+            $this->db->insert('new_product_group',$fromarray);
         }
-        function addproductmodel($formarray){
-            $this->db->insert('new_product_model',$formarray);
+        function addproductmodel($fromarray){
+            $this->db->insert('new_product_model',$fromarray);
         }
-        function addproductserial($formarray){
-            $this->db->insert('new_product_serial',$formarray);
+        function addproductserial($fromarray){
+            $this->db->insert('new_product_serial',$fromarray);
         }
-        function addproduct($formarray){
-            $this->db->insert('new_product',$formarray);
+        function addproduct($fromarray){
+            $this->db->insert('new_product',$fromarray);
         }
-        function addnewexecutive($formarray)
+        function addnewexecutive($fromarray)
         {
-            $this->db->insert('new_executive',$formarray);
-            //$this->db->insert('new_executive',$formarray);
+            $this->db->insert('new_executive',$fromarray);
+            //$this->db->insert('new_executive',$fromarray);
         }
-        function updatecustomer($userid,$fromArray)
+        function update_customer($userid,$fromArray)
         {
-            $this->db->where('user_id',$userid);
-            $this->db->update('new_customer',$fromArray);  //  update users SET name=? ,email = ? where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            $this->db->update('new_customer',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
-        function updateexecutive($userid,$fromArray)
+        function update_executive($userid,$fromArray)
         {
-            $this->db->where('user_id',$userid);
-            $this->db->update('new_executive',$fromArray);  //  update users SET name=? ,email = ? where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            $this->db->update('new_executive',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
         function update_product($userid,$fromArray)
         {
-            $this->db->where('user_id',$userid);
-            $this->db->update('new_product',$fromArray);  //  update users SET name=? ,email = ? where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            $this->db->update('new_product',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
         function update_product_group($userid,$fromArray)
         {
-            $this->db->where('user_id',$userid);
-            $this->db->update('new_product_group',$fromArray);  //  update users SET name=? ,email = ? where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            $this->db->update('new_product_group',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
         function update_product_model($userid,$fromArray)
         {
-            $this->db->where('user_id',$userid);
-            $this->db->update('new_product_model',$fromArray);  //  update users SET name=? ,email = ? where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            $this->db->update('new_product_model',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
         function update_product_serial($userid,$fromArray)
         {
-            $this->db->where('user_id',$userid);
-            $this->db->update('new_product_serial',$fromArray);  //  update users SET name=? ,email = ? where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            $this->db->update('new_product_serial',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
         function delete_customer($userid)
         {
-            $this->db->where('user_id',$userid);
+            $this->db->where('sr_no',$userid);
             $this->db->delete('new_customer');
         }
         function delete_executive($userid)
         {
-            $this->db->where('user_id',$userid);
+            $this->db->where('sr_no',$userid);
             $this->db->delete('new_executive');
         }
         function delete_product($userid)
         {
-            $this->db->where('user_id',$userid);
+            $this->db->where('sr_no',$userid);
             $this->db->delete('new_product');
         }
         function delete_product_group($userid)
         {
-            $this->db->where('user_id',$userid);
+            $this->db->where('sr_no',$userid);
             $this->db->delete('new_product_group');
         }
         function delete_product_model($userid)
         {
-            $this->db->where('user_id',$userid);
+            $this->db->where('sr_no',$userid);
             $this->db->delete('new_product_model');
         }
         function delete_product_serial($userid)
         {
-            $this->db->where('user_id',$userid);
+            $this->db->where('sr_no',$userid);
             $this->db->delete('new_product_serial');
         }
         function get_customer($userid)
         {
-            $this->db->where('user_id',$userid);
-            return $user = $this->db->get('new_customer')->row_array();  // select * from users where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            return $user = $this->db->get('new_customer')->row_array();  // select * from users where sr_no = ?;
         }
         function get_executive($userid)
         {
-            $this->db->where('user_id',$userid);
-            return $user = $this->db->get('new_executive')->row_array();  // select * from users where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            return $user = $this->db->get('new_executive')->row_array();  // select * from users where sr_no = ?;
         }
         function get_product($userid)
         {
-            $this->db->where('user_id',$userid);
-            return $user = $this->db->get('new_product')->row_array();  // select * from users where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            return $user = $this->db->get('new_product')->row_array();  // select * from users where sr_no = ?;
         }
         function get_product_group($userid)
         {
-            $this->db->where('user_id',$userid);
-            return $user = $this->db->get('new_product_group')->row_array();  // select * from users where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            return $user = $this->db->get('new_product_group')->row_array();  // select * from users where sr_no = ?;
         }
         function get_product_model($userid)
         {
-            $this->db->where('user_id',$userid);
-            return $user = $this->db->get('new_product_model')->row_array();  // select * from users where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            return $user = $this->db->get('new_product_model')->row_array();  // select * from users where sr_no = ?;
         }
         function get_product_serial($userid)
         {
-            $this->db->where('user_id',$userid);
-            return $user = $this->db->get('new_product_serial')->row_array();  // select * from users where user_id = ?;
+            $this->db->where('sr_no',$userid);
+            return $user = $this->db->get('new_product_serial')->row_array();  // select * from users where sr_no = ?;
         }
     }
 ?>

@@ -43,16 +43,16 @@ class Welcome extends CI_Controller {
 		{
 			//  save user to database.
 
-                $formarray=array();
-				$formarray['executive_code']= $this->input->post('executive_code');
-				$formarray['executive_name']= $this->input->post('executive_name');
-				$formarray['executive_type']= $this->input->post('executive_type');
-				$formarray['email']= $this->input->post('email');
-				$formarray['address']= $this->input->post('address');
-                $formarray['mobile_no']= $this->input->post('mobile_no');
-				$formarray['password']= $this->input->post('password');
+                $fromarray=array();
+				$fromarray['executive_code']= $this->input->post('executive_code');
+				$fromarray['executive_name']= $this->input->post('executive_name');
+				$fromarray['executive_type']= $this->input->post('executive_type');
+				$fromarray['email']= $this->input->post('email');
+				$fromarray['address']= $this->input->post('address');
+                $fromarray['mobile_no']= $this->input->post('mobile_no');
+				$fromarray['password']= $this->input->post('password');
 
-				$this->User_model->addnewexecutive($formarray);
+				$this->User_model->addnewexecutive($fromarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addnewexecutive');
 		}
@@ -74,16 +74,16 @@ class Welcome extends CI_Controller {
 		{
 			//  save user to database.
 
-                $formarray=array();
-				$formarray['product_code']= $this->input->post('product_code');
-				$formarray['product_brand']= $this->input->post('product_brand');
-				$formarray['product_name']= $this->input->post('product_name');
-				$formarray['product_unit']= $this->input->post('product_unit');
-				$formarray['product_details']= $this->input->post('product_details');
-                $formarray['product_warranty']= $this->input->post('product_warranty');
-				$formarray['product_image']= $this->input->post('product_image');
+                $fromarray=array();
+				$fromarray['product_code']= $this->input->post('product_code');
+				$fromarray['product_brand']= $this->input->post('product_brand');
+				$fromarray['product_name']= $this->input->post('product_name');
+				$fromarray['product_unit']= $this->input->post('product_unit');
+				$fromarray['product_details']= $this->input->post('product_details');
+                $fromarray['product_warranty']= $this->input->post('product_warranty');
+				$fromarray['product_image']= $this->input->post('product_image');
 
-				$this->User_model->addproduct($formarray);
+				$this->User_model->addproduct($fromarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproduct');
 		}
@@ -100,11 +100,11 @@ class Welcome extends CI_Controller {
 		{
 			//  save user to database.
 
-                $formarray=array();
-				$formarray['product_group_code']= $this->input->post('product_group_code');
-				$formarray['product_group_name']= $this->input->post('product_group_name');
+                $fromarray=array();
+				$fromarray['product_group_code']= $this->input->post('product_group_code');
+				$fromarray['product_group_name']= $this->input->post('product_group_name');
 				
-				$this->User_model->addproductgroup($formarray);
+				$this->User_model->addproductgroup($fromarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproductgroup');
 		}
@@ -122,12 +122,12 @@ class Welcome extends CI_Controller {
 		{
 			//  save user to database.
 
-                $formarray=array();
-				$formarray['product_model_code']= $this->input->post('product_model_code');
-				$formarray['product_model_name']= $this->input->post('product_model_name');
-				$formarray['select_product']= $this->input->post('select_product');
+                $fromarray=array();
+				$fromarray['product_model_code']= $this->input->post('product_model_code');
+				$fromarray['product_model_name']= $this->input->post('product_model_name');
+				$fromarray['select_product']= $this->input->post('select_product');
 				
-				$this->User_model->addproductmodel($formarray);
+				$this->User_model->addproductmodel($fromarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproductmodel');
 		}
@@ -146,18 +146,19 @@ class Welcome extends CI_Controller {
 		{
 			//  save user to database.
 
-                $formarray=array();
-				$formarray['product_serial_code']= $this->input->post('product_serial_code');
-				$formarray['product_model']= $this->input->post('product_model');
-				$formarray['product_name']= $this->input->post('product_name');
-				$formarray['product_price']= $this->input->post('product_price');
+                $fromarray=array();
+				$fromarray['product_serial_code']= $this->input->post('product_serial_code');
+				$fromarray['product_model']= $this->input->post('product_model');
+				$fromarray['product_name']= $this->input->post('product_name');
+				$fromarray['product_price']= $this->input->post('product_price');
 				
-				$this->User_model->addproductserial($formarray);
+				$this->User_model->addproductserial($fromarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addproductserial');
 		}
 	}
-	function addnewcustomer(){
+    function addnewcustomer()
+    {
 		$this->load->model('User_model');
 
 		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
@@ -178,33 +179,288 @@ class Welcome extends CI_Controller {
 		if ($this->form_validation->run()== false){
 			$this->load->view('addnewcustomer');
 		}
-		else {
-			//  save user to database.
-
-                $formarray=array();
-                $formarray['mobile_no']= $this->input->post('mobile_no');
-				$formarray['customer_code']= $this->input->post('customer_code');
-				$formarray['customer_name']= $this->input->post('customer_name');
-				$formarray['company_name']= $this->input->post('company_name');
-				$formarray['customer_type']= $this->input->post('customer_type');
-				$formarray['address']= $this->input->post('address');
-				$formarray['city']= $this->input->post('city');
-				$formarray['state']= $this->input->post('state');
-				$formarray['zip']= $this->input->post('zip');
-				$formarray['alt_phone']= $this->input->post('alt_phone');
-				$formarray['email']= $this->input->post('email');
-				$formarray['password']= $this->input->post('password');
-				$formarray['note']= $this->input->post('note');
-				$formarray['select_file']= $this->input->post('select_file');
-				
-                
-                $this->User_model->addnewcustomer($formarray);
+		else {  //  save user to database.
+                $fromarray=array();
+                $fromarray['mobile_no']= $this->input->post('mobile_no');
+				$fromarray['customer_code']= $this->input->post('customer_code');
+				$fromarray['customer_name']= $this->input->post('customer_name');
+				$fromarray['company_name']= $this->input->post('company_name');
+				$fromarray['customer_type']= $this->input->post('customer_type');
+				$fromarray['address']= $this->input->post('address');
+				$fromarray['city']= $this->input->post('city');
+				$fromarray['state']= $this->input->post('state');
+				$fromarray['zip']= $this->input->post('zip');
+				$fromarray['alt_phone']= $this->input->post('alt_phone');
+				$fromarray['email']= $this->input->post('email');
+				$fromarray['password']= $this->input->post('password');
+				$fromarray['note']= $this->input->post('note');
+				$fromarray['select_file']= $this->input->post('select_file');                
+                $this->User_model->addnewcustomer($fromarray);
                 $this->session->set_flashdata('success','Record added successfully!');
                 redirect(base_url().'index.php/welcome/addnewcustomer');
-		}
-        
+		}        
 	}
-	public function managecustomer()
+	function edit_customer($userid)
+    {
+        //$this->load->view('edit_customer');
+
+        $this->load->model('user_model');
+        $user=$this->user_model->get_customer($userid);
+        $data = array();
+        $data['user'] = $user;
+
+        $this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
+		$this->form_validation->set_rules('customer_code', 'Customer Code','required');
+		$this->form_validation->set_rules('customer_name', 'Customer Name','required');
+		$this->form_validation->set_rules('company_name', 'Company Name','required');
+		$this->form_validation->set_rules('customer_type', 'Customer Type','required');
+		$this->form_validation->set_rules('address', 'Address','required');
+		$this->form_validation->set_rules('city', 'City','required');
+		$this->form_validation->set_rules('state', 'State','required');
+		$this->form_validation->set_rules('zip', 'Zip/Postal Code','required');
+		$this->form_validation->set_rules('alt_phone', 'Alternate Phone No','required');
+		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('password', 'Password','required');
+		//$this->form_validation->set_rules('note', 'Note');
+		$this->form_validation->set_rules('select_file', 'File');
+
+            if($this->form_validation->run() == false)
+            {
+                $this->load->view('edit_customer',$data);
+            }
+            else
+            {
+                $fromArray = array();
+                $fromarray['mobile_no']= $this->input->post('mobile_no');
+				$fromarray['customer_code']= $this->input->post('customer_code');
+				$fromarray['customer_name']= $this->input->post('customer_name');
+				$fromarray['company_name']= $this->input->post('company_name');
+				$fromarray['customer_type']= $this->input->post('customer_type');
+				$fromarray['address']= $this->input->post('address');
+				$fromarray['city']= $this->input->post('city');
+				$fromarray['state']= $this->input->post('state');
+				$fromarray['zip']= $this->input->post('zip');
+				$fromarray['alt_phone']= $this->input->post('alt_phone');
+				$fromarray['email']= $this->input->post('email');
+				$fromarray['password']= $this->input->post('password');
+				$fromarray['note']= $this->input->post('note');
+				$fromarray['select_file']= $this->input->post('select_file');                
+                $this->user_model->update_customer($userid,$fromArray);
+                $this->session->set_flashdata('success','Record updated successfully');
+                redirect(base_url().'index.php/welcome/maagecustomer');
+            }
+    }
+    function delete_customer($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_customer($userid);
+        if(empty($user))        
+        {
+            $this->session->set_flashdata('failure','record not found in database');
+            redirect(base_url().'index.php/welcome/managecustomer');
+        }
+        else{
+        $this->user_model->delete_customer($userid);
+        $this->session->set_flashdata('success','record deleted successfully');
+        redirect(base_url().'index.php/welcome/managecustomer');
+        }
+	}
+	function edit_executive($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_executive($userid);
+        $data = array();
+        $data['user'] = $user;
+
+        $this->form_validation->set_rules('name','name','required');     
+        $this->form_validation->set_rules('email','email','required|valid_email'); 
+
+            if($this->form_validation->run() == false)
+            {
+                $this->load->view('edit',$data);
+            }
+            else
+            {
+                $fromArray = array();
+                $fromArray['name']=$this->input->post('name');
+                $fromArray['email']=$this->input->post('email');
+                $this->user_model->update_executive($userid,$fromArray);
+                $this->session->set_flashdata('success','Record updated successfully');
+                redirect(base_url().'index.php/user/manageexecutive');
+            }
+    }
+    function delete_executive($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_executive($userid);
+        if(empty($user))        
+        {
+            $this->session->set_flashdata('failure','record not found in database');
+            redirect(base_url().'index.php/user/index');
+        }
+        else{
+        $this->user_model->delete_executive($userid);
+        $this->session->set_flashdata('success','record deleted successfully');
+        redirect(base_url().'index.php/user/index');
+        }
+	}
+	function edit_product($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product($userid);
+        $data = array();
+        $data['user'] = $user;
+
+        $this->form_validation->set_rules('name','name','required');     
+        $this->form_validation->set_rules('email','email','required|valid_email'); 
+
+            if($this->form_validation->run() == false)
+            {
+                $this->load->view('edit',$data);
+            }
+            else
+            {
+                $fromArray = array();
+                $fromArray['name']=$this->input->post('name');
+                $fromArray['email']=$this->input->post('email');
+                $this->user_model->update_product($userid,$fromArray);
+                $this->session->set_flashdata('success','Record updated successfully');
+                redirect(base_url().'index.php/user/index');
+            }
+    }
+    function delete_product($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product($userid);
+        if(empty($user))        
+        {
+            $this->session->set_flashdata('failure','record not found in database');
+            redirect(base_url().'index.php/user/index');
+        }
+        else{
+        $this->user_model->delete_product($userid);
+        $this->session->set_flashdata('success','record deleted successfully');
+        redirect(base_url().'index.php/user/index');
+        }
+	}
+	function edit_product_group($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product_group($userid);
+        $data = array();
+        $data['user'] = $user;
+
+        $this->form_validation->set_rules('name','name','required');     
+        $this->form_validation->set_rules('email','email','required|valid_email'); 
+
+            if($this->form_validation->run() == false)
+            {
+                $this->load->view('edit',$data);
+            }
+            else
+            {
+                $fromArray = array();
+                $fromArray['name']=$this->input->post('name');
+                $fromArray['email']=$this->input->post('email');
+                $this->user_model->update_product_group($userid,$fromArray);
+                $this->session->set_flashdata('success','Record updated successfully');
+                redirect(base_url().'index.php/user/index');
+            }
+    }
+    function delete_product_group($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product_group($userid);
+        if(empty($user))        
+        {
+            $this->session->set_flashdata('failure','record not found in database');
+            redirect(base_url().'index.php/user/index');
+        }
+        else{
+        $this->user_model->delete_product_group($userid);
+        $this->session->set_flashdata('success','record deleted successfully');
+        redirect(base_url().'index.php/user/index');
+        }
+	}
+	function edit_product_model($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product_model($userid);
+        $data = array();
+        $data['user'] = $user;
+
+        $this->form_validation->set_rules('name','name','required');     
+        $this->form_validation->set_rules('email','email','required|valid_email'); 
+
+            if($this->form_validation->run() == false)
+            {
+                $this->load->view('edit',$data);
+            }
+            else
+            {
+                $fromArray = array();
+                $fromArray['name']=$this->input->post('name');
+                $fromArray['email']=$this->input->post('email');
+                $this->user_model->update_product_model($userid,$fromArray);
+                $this->session->set_flashdata('success','Record updated successfully');
+                redirect(base_url().'index.php/user/index');
+            }
+    }
+    function delete_product_model($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product_model($userid);
+        if(empty($user))        
+        {
+            $this->session->set_flashdata('failure','record not found in database');
+            redirect(base_url().'index.php/user/index');
+        }
+        else{
+        $this->user_model->delete_product_model($userid);
+        $this->session->set_flashdata('success','record deleted successfully');
+        redirect(base_url().'index.php/user/index');
+        }
+	}
+	function edit_product_serial($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product_serial($userid);
+        $data = array();
+        $data['user'] = $user;
+
+        $this->form_validation->set_rules('name','name','required');     
+        $this->form_validation->set_rules('email','email','required|valid_email'); 
+
+            if($this->form_validation->run() == false)
+            {
+                $this->load->view('edit',$data);
+            }
+            else
+            {
+                $fromArray = array();
+                $fromArray['name']=$this->input->post('name');
+                $fromArray['email']=$this->input->post('email');
+                $this->user_model->update_product_serial($userid,$fromArray);
+                $this->session->set_flashdata('success','Record updated successfully');
+                redirect(base_url().'index.php/user/index');
+            }
+    }
+    function delete_product_serial($userid)
+    {
+        $this->load->model('user_model');
+        $user=$this->user_model->get_product_serial($userid);
+        if(empty($user))        
+        {
+            $this->session->set_flashdata('failure','record not found in database');
+            redirect(base_url().'index.php/user/index');
+        }
+        else{
+        $this->user_model->delete_product_serial($userid);
+        $this->session->set_flashdata('success','record deleted successfully');
+        redirect(base_url().'index.php/user/index');
+        }
+    }
+    public function managecustomer()
 	{
 		$this->load->model('User_model');
 		$new_customer = $this->User_model->managecustomer();
@@ -252,238 +508,4 @@ class Welcome extends CI_Controller {
 		$data['new_product_serial']= $new_product_serial;
 		$this->load->view('manage_product_serial',$data);
 	}
-	function edit_customer($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        $data = array();
-        $data['user'] = $user;
-
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
-            if($this->form_validation->run() == false)
-            {
-                $this->load->view('edit',$data);
-            }
-            else
-            {
-                $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->updateuser($userid,$fromArray);
-                $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
-            }
-    }
-    function delete_customer($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        if(empty($user))        
-        {
-            $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
-        }
-        else{
-        $this->user_model->deleteuser($userid);
-        $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
-        }
-	}
-	function edit_executive($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        $data = array();
-        $data['user'] = $user;
-
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
-            if($this->form_validation->run() == false)
-            {
-                $this->load->view('edit',$data);
-            }
-            else
-            {
-                $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->updateuser($userid,$fromArray);
-                $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
-            }
-    }
-    function delete_executive($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        if(empty($user))        
-        {
-            $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
-        }
-        else{
-        $this->user_model->deleteuser($userid);
-        $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
-        }
-	}
-	function edit_product($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        $data = array();
-        $data['user'] = $user;
-
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
-            if($this->form_validation->run() == false)
-            {
-                $this->load->view('edit',$data);
-            }
-            else
-            {
-                $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->updateuser($userid,$fromArray);
-                $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
-            }
-    }
-    function delete_product($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        if(empty($user))        
-        {
-            $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
-        }
-        else{
-        $this->user_model->deleteuser($userid);
-        $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
-        }
-	}
-	function edit_product_group($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        $data = array();
-        $data['user'] = $user;
-
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
-            if($this->form_validation->run() == false)
-            {
-                $this->load->view('edit',$data);
-            }
-            else
-            {
-                $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->updateuser($userid,$fromArray);
-                $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
-            }
-    }
-    function delete_product_group($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        if(empty($user))        
-        {
-            $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
-        }
-        else{
-        $this->user_model->deleteuser($userid);
-        $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
-        }
-	}
-	function edit_product_model($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        $data = array();
-        $data['user'] = $user;
-
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
-            if($this->form_validation->run() == false)
-            {
-                $this->load->view('edit',$data);
-            }
-            else
-            {
-                $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->updateuser($userid,$fromArray);
-                $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
-            }
-    }
-    function delete_product_model($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        if(empty($user))        
-        {
-            $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
-        }
-        else{
-        $this->user_model->deleteuser($userid);
-        $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
-        }
-	}
-	function edit_product_serial($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        $data = array();
-        $data['user'] = $user;
-
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
-            if($this->form_validation->run() == false)
-            {
-                $this->load->view('edit',$data);
-            }
-            else
-            {
-                $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->updateuser($userid,$fromArray);
-                $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
-            }
-    }
-    function delete_product_serial($userid)
-    {
-        $this->load->model('user_model');
-        $user=$this->user_model->getuser($userid);
-        if(empty($user))        
-        {
-            $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
-        }
-        else{
-        $this->user_model->deleteuser($userid);
-        $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
-        }
-    }
 }
