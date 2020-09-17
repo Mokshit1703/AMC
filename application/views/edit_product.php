@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('header2.php'); ?>
 <?php include('body.php'); ?>
 <div class="page-content">
     <div class="row">
@@ -68,4 +68,4 @@
         </div>
     </div>
 </div>
-<?php include('footer.php'); ?>
+<?php include('footer2.php'); ?>
