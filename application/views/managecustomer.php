@@ -42,19 +42,20 @@
                                     <td><?php echo $user['password']; ?></td>
                                     <td><?php echo "status"; ?></td>
                                      
-                                    <td><div class="btn-group flex-wrap">
-                                            <button type="button" class="mb-1 mt-1 mr-1 btn btn-default dropdown-toggle" data-toggle="dropdown">Action 
+                                    <td>
+                                        <div class="btn-group flex-wrap">
+                                            <button type="button" class="mb-1 mt-1 mr-1 btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action 
                                                 <span class="caret"></span>
                                             </button>
-                                            <div class="dropdown-menu text-1" role="menu"> 
-                                                <a class="dropdown-item " href="<?php echo base_url().'index.php/welcome/edit_customer/'.$user['sr_no']?>">
-                                                    <i class="feather feather-edit"></i> Edit
+                                            <div class="dropdown-menu" role="menu" x-placement="bottom-start" > 
+                                                <a class="dropdown-item text-1" href="<?php echo base_url().'index.php/welcome/edit_customer/'.$user['sr_no']?>">
+                                                    <i class="" data-feather="edit"></i> Edit
                                                 </a>
                                                 <a class="dropdown-item text-1"  href="<?php echo base_url().'index.php/welcome/delete_customer/'.$user['sr_no']?>">
-                                                    <i class=""></i> Delete
+                                                    <i class="" data-feather="delete"></i> Delete
                                                 </a>
                     						</div>
-                                      </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php } } else { ?>
