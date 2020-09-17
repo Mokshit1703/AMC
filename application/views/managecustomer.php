@@ -26,8 +26,6 @@
                                         <th>Mobile No.</th>
                                         <th>Password</th>
                                         <th>Status</th>
-                                        <th width="60">Edit</th>
-                                        <th width="100">Delete</th>
                                         <th>Function</th>
                                     </tr>
                                 </thead>
@@ -43,14 +41,7 @@
                                     <td><?php echo $user['mobile_no']; ?></td>
                                     <td><?php echo $user['password']; ?></td>
                                     <td><?php echo "status"; ?></td>
-                                    <td>
-                                    <a href="<?php echo base_url().'index.php/welcome/edit_customer/'.$user['sr_no']?>" class="btn btn-primary">
-                                        Edit</a>    
-                                    </td> 
-                                    <td>
-                                        <a href="<?php echo base_url().'index.php/welcome/delete_customer/'.$user['sr_no']?>" class="btn btn-danger">
-                                        delete</a>    
-                                    </td> 
+                                     
                                     <td><div class="btn-group flex-wrap">
                                             <button type="button" class="mb-1 mt-1 mr-1 btn btn-default dropdown-toggle" data-toggle="dropdown">Action 
                                                 <span class="caret"></span>
