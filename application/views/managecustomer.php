@@ -18,7 +18,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Customer ID</th>
+                                        <th>Customer Code</th>
                                         <th>Customer Name</th>
                                         <th>Email</th>
                                         <th>Customer Type</th>
@@ -47,8 +47,8 @@
                                                 <span class="caret"></span>
                                             </button>
                                             <div class="dropdown-menu text-1" role="menu"> 
-                                                <a class="dropdown-item " href="<?php echo base_url().'index.php/welcome/edit_customer'.$user['sr_no']?>">
-                                                    <i class=""></i> Edit
+                                                <a class="dropdown-item " href="<?php echo base_url().'index.php/welcome/edit_customer/'.$user['sr_no']?>">
+                                                    <i class="feather feather-edit"></i> Edit
                                                 </a>
                                                 <a class="dropdown-item text-1"  href="<?php echo base_url().'index.php/welcome/delete_customer/'.$user['sr_no']?>">
                                                     <i class=""></i> Delete

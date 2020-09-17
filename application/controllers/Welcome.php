@@ -272,8 +272,13 @@ class Welcome extends CI_Controller {
         $data = array();
         $data['user'] = $user;
 
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
+        $this->form_validation->set_rules('executive_code', 'Executive Code','required');
+		$this->form_validation->set_rules('executive_name', 'Executive Name','required');
+		$this->form_validation->set_rules('executive_type', 'Executive Type','required');
+		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('address', 'Address','required');
+		$this->form_validation->set_rules('mobile_no', 'Mobile Number','required');
+		$this->form_validation->set_rules('password', 'Password','required');
 
             if($this->form_validation->run() == false)
             {
@@ -282,11 +287,16 @@ class Welcome extends CI_Controller {
             else
             {
                 $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
+                $fromarray['executive_code']= $this->input->post('executive_code');
+				$fromarray['executive_name']= $this->input->post('executive_name');
+				$fromarray['executive_type']= $this->input->post('executive_type');
+				$fromarray['email']= $this->input->post('email');
+				$fromarray['address']= $this->input->post('address');
+                $fromarray['mobile_no']= $this->input->post('mobile_no');
+				$fromarray['password']= $this->input->post('password');
                 $this->user_model->update_executive($userid,$fromArray);
                 $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/manageexecutive');
+                redirect(base_url().'index.php/welcome/manageexecutive');
             }
     }
     function delete_executive($userid)
@@ -296,12 +306,13 @@ class Welcome extends CI_Controller {
         if(empty($user))        
         {
             $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
+            redirect(base_url().'index.php/welcome/manage_product');
         }
-        else{
+        else
+        {
         $this->user_model->delete_executive($userid);
         $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
+        redirect(base_url().'index.php/welcome/manageexecutive');
         }
 	}
 	function edit_product($userid)
@@ -311,21 +322,31 @@ class Welcome extends CI_Controller {
         $data = array();
         $data['user'] = $user;
 
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
+        $this->form_validation->set_rules('product_code', 'Product Code','required');
+		$this->form_validation->set_rules('product_brand', 'Product Brand','required');
+		$this->form_validation->set_rules('product_name', 'Product Name','required');
+		$this->form_validation->set_rules('product_unit', 'Product Unit','required');
+		$this->form_validation->set_rules('product_details', 'Product Details','required');
+		$this->form_validation->set_rules('product_warranty', 'Product Warranty','required');
+		$this->form_validation->set_rules('product_image', 'Product Image','required');
 
             if($this->form_validation->run() == false)
             {
-                $this->load->view('edit',$data);
+                $this->load->view('edit_product',$data);
             }
             else
             {
                 $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
+                $fromarray['product_code']= $this->input->post('product_code');
+				$fromarray['product_brand']= $this->input->post('product_brand');
+				$fromarray['product_name']= $this->input->post('product_name');
+				$fromarray['product_unit']= $this->input->post('product_unit');
+				$fromarray['product_details']= $this->input->post('product_details');
+                $fromarray['product_warranty']= $this->input->post('product_warranty');
+				$fromarray['product_image']= $this->input->post('product_image');
                 $this->user_model->update_product($userid,$fromArray);
                 $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
+                redirect(base_url().'index.php/welcome/manage_product');
             }
     }
     function delete_product($userid)
@@ -335,12 +356,12 @@ class Welcome extends CI_Controller {
         if(empty($user))        
         {
             $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
+            redirect(base_url().'index.php/welcome/manage_product');
         }
         else{
         $this->user_model->delete_product($userid);
         $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
+        redirect(base_url().'index.php/welcome/manage_product');
         }
 	}
 	function edit_product_group($userid)
@@ -350,21 +371,21 @@ class Welcome extends CI_Controller {
         $data = array();
         $data['user'] = $user;
 
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
+        $this->form_validation->set_rules('product_group_code', 'Product Group Code','required');
+		$this->form_validation->set_rules('product_group_name', 'Product Group Name','required');
+		
             if($this->form_validation->run() == false)
             {
-                $this->load->view('edit',$data);
+                $this->load->view('edit_product_group',$data);
             }
             else
             {
                 $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->update_product_group($userid,$fromArray);
+                $fromarray['product_group_code']= $this->input->post('product_group_code');
+				$fromarray['product_group_name']= $this->input->post('product_group_name');
+				$this->user_model->update_product_group($userid,$fromArray);
                 $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
+                redirect(base_url().'index.php/welcome/manage_product_group');
             }
     }
     function delete_product_group($userid)
@@ -374,12 +395,12 @@ class Welcome extends CI_Controller {
         if(empty($user))        
         {
             $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
+            redirect(base_url().'index.php/welcome/manage_product_group');
         }
         else{
         $this->user_model->delete_product_group($userid);
         $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
+        redirect(base_url().'index.php/welcome/manage_product_group');
         }
 	}
 	function edit_product_model($userid)
@@ -389,21 +410,23 @@ class Welcome extends CI_Controller {
         $data = array();
         $data['user'] = $user;
 
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
+        $this->form_validation->set_rules('product_model_code', 'Product Model Code','required');
+		$this->form_validation->set_rules('product_model_name', 'Product Model Name','required');
+		$this->form_validation->set_rules('select_product', 'Select Product','required');
+		
             if($this->form_validation->run() == false)
             {
-                $this->load->view('edit',$data);
+                $this->load->view('edit_product_model',$data);
             }
             else
             {
                 $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->update_product_model($userid,$fromArray);
+                $fromarray['product_model_code']= $this->input->post('product_model_code');
+				$fromarray['product_model_name']= $this->input->post('product_model_name');
+				$fromarray['select_product']= $this->input->post('select_product');
+				$this->user_model->update_product_model($userid,$fromArray);
                 $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
+                redirect(base_url().'index.php/welcome/manage_product_model');
             }
     }
     function delete_product_model($userid)
@@ -413,12 +436,12 @@ class Welcome extends CI_Controller {
         if(empty($user))        
         {
             $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
+            redirect(base_url().'index.php/welcome/manage_product_model');
         }
         else{
         $this->user_model->delete_product_model($userid);
         $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
+        redirect(base_url().'index.php/welcome/manage_product_model');
         }
 	}
 	function edit_product_serial($userid)
@@ -428,21 +451,25 @@ class Welcome extends CI_Controller {
         $data = array();
         $data['user'] = $user;
 
-        $this->form_validation->set_rules('name','name','required');     
-        $this->form_validation->set_rules('email','email','required|valid_email'); 
-
+        $this->form_validation->set_rules('product_serial_code', 'Product Serial Code','required');
+		$this->form_validation->set_rules('product_model', 'Product Model','required');
+		$this->form_validation->set_rules('product_name', 'Product ame','required');
+		$this->form_validation->set_rules('product_price', 'Product Price','required');
+		
             if($this->form_validation->run() == false)
             {
-                $this->load->view('edit',$data);
+                $this->load->view('edit_product_serial',$data);
             }
             else
             {
                 $fromArray = array();
-                $fromArray['name']=$this->input->post('name');
-                $fromArray['email']=$this->input->post('email');
-                $this->user_model->update_product_serial($userid,$fromArray);
+                $fromarray['product_serial_code']= $this->input->post('product_serial_code');
+				$fromarray['product_model']= $this->input->post('product_model');
+				$fromarray['product_name']= $this->input->post('product_name');
+				$fromarray['product_price']= $this->input->post('product_price');
+				$this->user_model->update_product_serial($userid,$fromArray);
                 $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/user/index');
+                redirect(base_url().'index.php/welcome/manage_product_serial');
             }
     }
     function delete_product_serial($userid)
@@ -452,12 +479,12 @@ class Welcome extends CI_Controller {
         if(empty($user))        
         {
             $this->session->set_flashdata('failure','record not found in database');
-            redirect(base_url().'index.php/user/index');
+            redirect(base_url().'index.php/welcome/manage_product_serial');
         }
         else{
         $this->user_model->delete_product_serial($userid);
         $this->session->set_flashdata('success','record deleted successfully');
-        redirect(base_url().'index.php/user/index');
+        redirect(base_url().'index.php/welcome/manage_product_serial');
         }
     }
     public function managecustomer()

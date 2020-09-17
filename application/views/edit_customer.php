@@ -146,7 +146,7 @@
                                           <div class="card-body">
                                             <h6 class="card-title">Add File</h6>
                                             <p class="card-description">Upload File Here.</p>
-                                            <input type="file" name="select_file" id="myDropify" class="border" value= "<?php echo set_value('file',$user['select_file']);?>"/>
+                                            <input type="file" name="select_file" id="myDropify" class="border" value= "<?php echo set_value('select_file',$user['select_file']);?>"/>
                                           </div>
                                         </div>
                                       </div>
