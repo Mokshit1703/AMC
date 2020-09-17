@@ -81,18 +81,20 @@
                 </li>
                 <li class="nav-item">
                   <a href="/AMC/index.php/welcome/addproductserial" class="nav-link">Add Product Serial</a>
+				</li>
+				<div class="separator separator-dashed my-10">
+                </div>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/manage_product_group" class="nav-link">Manage Product Group</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manageproductgroup" class="nav-link">Manage Product Group</a>
+                  <a href="/AMC/index.php/welcome/manage_product" class="nav-link">Manage Product</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manageproduct" class="nav-link">Manage Product</a>
+                  <a href="/AMC/index.php/welcome/manage_product_model" class="nav-link">Manage Product Model</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manageproductmodel" class="nav-link">Manage Product Model</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manageproductserial" class="nav-link">Manage Product Serial</a>
+                  <a href="/AMC/index.php/welcome/manage_product_serial" class="nav-link">Manage Product Serial</a>
                 </li>
               </ul>
             </div>
