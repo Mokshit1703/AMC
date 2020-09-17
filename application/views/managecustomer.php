@@ -55,11 +55,11 @@
                                             <button type="button" class="mb-1 mt-1 mr-1 btn btn-default dropdown-toggle" data-toggle="dropdown">Action 
                                                 <span class="caret"></span>
                                             </button>
-                                            <div class="dropdown-menu" role="menu"> 
+                                            <div class="dropdown-menu text-1" role="menu"> 
                                                 <a class="dropdown-item " href="<?php echo base_url().'index.php/welcome/edit_customer'.$user['sr_no']?>">
                                                     <i class=""></i> Edit
                                                 </a>
-                                                <a class="dropdown-item"  href="<?php echo base_url().'index.php/welcome/delete_customer'.$user['sr_no']?>">
+                                                <a class="dropdown-item text-1"  href="<?php echo base_url().'index.php/welcome/delete_customer/'.$user['sr_no']?>">
                                                     <i class=""></i> Delete
                                                 </a>
                     						</div>
