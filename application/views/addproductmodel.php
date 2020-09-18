@@ -23,8 +23,16 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label"><h5>Select Product</h5></label>
-                                      <input type="text" name="select_product" class="form-control" placeholder="Select Product" value= "<?php echo set_value('select_product');?>">
+                                      <select class="form-control" name="select_product" value= "<?php echo set_value('select_product');?>">
                                       <?php echo form_error('select_product');?>
+                                                  <option>Select an option below</option>
+                                                  <option>Drive/Amc/Electrical</option>
+																									<option>220 Cable</option>
+																									<option>440 Transformer</option>
+																									<option>110 V Relay</option>
+                                              </select>
+                                      
+                                      
                                     </div>
                                     
                                   </div><!-- Col -->

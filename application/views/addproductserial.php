@@ -18,13 +18,25 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label"><h5>product Model</h5></label>
-                                      <input type="text" name="product_model" class="form-control" placeholder="Enter product model" value= "<?php echo set_value('product_model');?>">
+                                      <select class="form-control" name="product_model" value= "<?php echo set_value('product_model');?>">
                                       <?php echo form_error('product_model');?>
+                                                  <option>Select an option below</option>
+                                                  <option>Drive/Amc/Electrical</option>
+																									<option>220 Cable</option>
+																									<option>440 Transformer</option>
+																									<option>110 V Relay</option>
+                                              </select>
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label"><h5>product Name</h5></label>
-                                      <input type="text" name="product_name" class="form-control" placeholder="Enter product name" value= "<?php echo set_value('product_name');?>">
+                                      <select class="form-control" name="product_name" value= "<?php echo set_value('product_name');?>">
                                       <?php echo form_error('product_name');?>
+                                                  <option>Select an option below</option>
+                                                  <option>Wire</option>
+																									<option>Cable</option>
+																									<option>Transformer</option>
+																									<option>Relay</option>
+                                              </select>
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label"><h5>Product Price</h5></label>
