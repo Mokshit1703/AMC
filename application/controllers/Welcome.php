@@ -226,7 +226,7 @@ class Welcome extends CI_Controller {
 
             if($this->form_validation->run() == false)
             {
-                $this->load->view('Edit_customer',$data);
+                $this->load->view('edit_customer',$data);
             }
             else
             {
@@ -247,7 +247,7 @@ class Welcome extends CI_Controller {
 				$fromarray['select_file']= $this->input->post('select_file');                
                 $this->user_model->update_customer($userid,$fromArray);
                 $this->session->set_flashdata('success','Record updated successfully');
-                redirect(base_url().'index.php/welcome/maagecustomer');
+                redirect(base_url().'index.php/welcome/managecustomer');
             }
     }
     function delete_customer($userid)

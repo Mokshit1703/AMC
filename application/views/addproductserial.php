@@ -12,22 +12,22 @@
                               <div class="row">
                                   <div class="col-lg-5 my-2 ">
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Serial Code</h4></label>
+                                      <label class="control-label"><h5>Product Serial Code</h5></label>
                                       <input type="text" name="product_serial_code" class="form-control" placeholder="Enter product serial code" value= "<?php echo set_value('product_serial_code');?>">
                                       <?php echo form_error('product_serial_code');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>product Model</h4></label>
+                                      <label class="control-label"><h5>product Model</h5></label>
                                       <input type="text" name="product_model" class="form-control" placeholder="Enter product model" value= "<?php echo set_value('product_model');?>">
                                       <?php echo form_error('product_model');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>product Name</h4></label>
+                                      <label class="control-label"><h5>product Name</h5></label>
                                       <input type="text" name="product_name" class="form-control" placeholder="Enter product name" value= "<?php echo set_value('product_name');?>">
                                       <?php echo form_error('product_name');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Price</h4></label>
+                                      <label class="control-label"><h5>Product Price</h5></label>
                                       <input type="text" name="product_price" class="form-control" placeholder="Enter product pricel" value= "<?php echo set_value('product_price');?>">
                                       <?php echo form_error('product_price');?>
                                     </div>

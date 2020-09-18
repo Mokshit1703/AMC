@@ -45,7 +45,6 @@
         }
         function update_customer($userid,$fromArray)
         {
-            $this->db->set($fromArray);
             $this->db->where('sr_no',$userid);
             $this->db->update('new_customer',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }

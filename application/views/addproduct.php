@@ -12,39 +12,39 @@
                               <div class="row">
                                   <div class="col-lg-5 my-2 ">
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Code</h4></label>
+                                      <label class="control-label"><h5>Product Code</h5></label>
                                       <input type="text" name="product_code" class="form-control" placeholder="Enter Product Code" value= "<?php echo set_value('product_code');?>">
                                       <?php echo form_error('product_code');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Brand</h4></label>
+                                      <label class="control-label"><h5>Product Brand</h5></label>
                                       <input type="text" name="product_brand" class="form-control" placeholder="Enter Product Brand" value= "<?php echo set_value('product_brand');?>">
                                       <?php echo form_error('product_brand');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Name</h4></label>
+                                      <label class="control-label"><h5>Product Name</h5></label>
                                       <input type="text" name="product_name" class="form-control" placeholder="Enter Product Name" value= "<?php echo set_value('product_name');?>">
                                       <?php echo form_error('product_name');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Unit</h4></label>
+                                      <label class="control-label"><h5>Product Unit</h5></label>
                                       <input type="text" name="product_unit" class="form-control" placeholder="Enter Product Unit" value= "<?php echo set_value('product_unit');?>">
                                       <?php echo form_error('product_unit');?>
                                     </div>
                                   </div><!-- Col -->
                                   <div class="col-lg-5 my-2 ">
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Details</h4></label>
+                                      <label class="control-label"><h5>Product Details</h5></label>
                                       <textarea rows="4" name="product_details" type="text" class="form-control" placeholder="Enter Product Details" value= "<?php echo set_value('product_details');?>"></textarea>
                                       <?php echo form_error('product_details');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Warranty</h4></label>
+                                      <label class="control-label"><h5>Product Warranty</h5></label>
                                       <input type="text" name="product_warranty" class="form-control" placeholder="Enter Product Warranty" value= "<?php echo set_value('product_warranty');?>">
                                       <?php echo form_error('product_warranty');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Image</h4></label>
+                                      <label class="control-label"><h5>Product Image</h5></label>
                                       <input type="text" name="product_image" class="form-control" placeholder="Enter Product Image" value= "<?php echo set_value('product_image');?>">
                                       <?php echo form_error('product_image');?>
                                     </div>

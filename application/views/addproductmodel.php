@@ -12,17 +12,17 @@
                               <div class="row">
                                   <div class="col-lg-5 my-2 ">
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Model Code</h4></label>
+                                      <label class="control-label"><h5>Product Model Code</h5></label>
                                       <input type="text" name="product_model_code" class="form-control" placeholder="Enter Product Model Code" value= "<?php echo set_value('product_model_code');?>">
                                       <?php echo form_error('product_model_code');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Product Model Name</h4></label>
+                                      <label class="control-label"><h5>Product Model Name</h5></label>
                                       <input type="text" name="product_model_name" class="form-control" placeholder="Enter Product Model Name" value= "<?php echo set_value('product_model_name');?>">
                                       <?php echo form_error('product_model_name');?>
                                     </div>
                                     <div class="form-group">
-                                      <label class="control-label"><h4>Select Product</h4></label>
+                                      <label class="control-label"><h5>Select Product</h5></label>
                                       <input type="text" name="select_product" class="form-control" placeholder="Select Product" value= "<?php echo set_value('select_product');?>">
                                       <?php echo form_error('select_product');?>
                                     </div>
