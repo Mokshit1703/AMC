@@ -230,7 +230,7 @@ class Welcome extends CI_Controller {
             }
             else
             {
-                $fromArray = array();
+                $fromarray = array();
                 $fromarray['mobile_no']= $this->input->post('mobile_no');
 				$fromarray['customer_code']= $this->input->post('customer_code');
 				$fromarray['customer_name']= $this->input->post('customer_name');
@@ -245,7 +245,7 @@ class Welcome extends CI_Controller {
 				$fromarray['password']= $this->input->post('password');
 				$fromarray['note']= $this->input->post('note');
 				$fromarray['select_file']= $this->input->post('select_file');                
-                $this->user_model->update_customer($userid,$fromArray);
+                $this->user_model->update_customer($userid,$fromarray);
                 $this->session->set_flashdata('success','Record updated successfully');
                 redirect(base_url().'index.php/welcome/managecustomer');
             }
@@ -286,7 +286,7 @@ class Welcome extends CI_Controller {
             }
             else
             {
-                $fromArray = array();
+                $fromarray = array();
                 $fromarray['executive_code']= $this->input->post('executive_code');
 				$fromarray['executive_name']= $this->input->post('executive_name');
 				$fromarray['executive_type']= $this->input->post('executive_type');
@@ -294,7 +294,7 @@ class Welcome extends CI_Controller {
 				$fromarray['address']= $this->input->post('address');
                 $fromarray['mobile_no']= $this->input->post('mobile_no');
 				$fromarray['password']= $this->input->post('password');
-                $this->user_model->update_executive($userid,$fromArray);
+                $this->user_model->update_executive($userid,$fromarray);
                 $this->session->set_flashdata('success','Record updated successfully');
                 redirect(base_url().'index.php/welcome/manageexecutive');
             }
@@ -336,7 +336,7 @@ class Welcome extends CI_Controller {
             }
             else
             {
-                $fromArray = array();
+                $fromarray = array();
                 $fromarray['product_code']= $this->input->post('product_code');
 				$fromarray['product_brand']= $this->input->post('product_brand');
 				$fromarray['product_name']= $this->input->post('product_name');
@@ -344,7 +344,7 @@ class Welcome extends CI_Controller {
 				$fromarray['product_details']= $this->input->post('product_details');
                 $fromarray['product_warranty']= $this->input->post('product_warranty');
 				$fromarray['product_image']= $this->input->post('product_image');
-                $this->user_model->update_product($userid,$fromArray);
+                $this->user_model->update_product($userid,$fromarray);
                 $this->session->set_flashdata('success','Record updated successfully');
                 redirect(base_url().'index.php/welcome/manage_product');
             }
@@ -380,10 +380,10 @@ class Welcome extends CI_Controller {
             }
             else
             {
-                $fromArray = array();
+                $fromarray = array();
                 $fromarray['product_group_code']= $this->input->post('product_group_code');
 				$fromarray['product_group_name']= $this->input->post('product_group_name');
-				$this->user_model->update_product_group($userid,$fromArray);
+				$this->user_model->update_product_group($userid,$fromarray);
                 $this->session->set_flashdata('success','Record updated successfully');
                 redirect(base_url().'index.php/welcome/manage_product_group');
             }
@@ -420,11 +420,11 @@ class Welcome extends CI_Controller {
             }
             else
             {
-                $fromArray = array();
+                $fromarray = array();
                 $fromarray['product_model_code']= $this->input->post('product_model_code');
 				$fromarray['product_model_name']= $this->input->post('product_model_name');
 				$fromarray['select_product']= $this->input->post('select_product');
-				$this->user_model->update_product_model($userid,$fromArray);
+				$this->user_model->update_product_model($userid,$fromarray);
                 $this->session->set_flashdata('success','Record updated successfully');
                 redirect(base_url().'index.php/welcome/manage_product_model');
             }
@@ -462,12 +462,12 @@ class Welcome extends CI_Controller {
             }
             else
             {
-                $fromArray = array();
+                $fromarray = array();
                 $fromarray['product_serial_code']= $this->input->post('product_serial_code');
 				$fromarray['product_model']= $this->input->post('product_model');
 				$fromarray['product_name']= $this->input->post('product_name');
 				$fromarray['product_price']= $this->input->post('product_price');
-				$this->user_model->update_product_serial($userid,$fromArray);
+				$this->user_model->update_product_serial($userid,$fromarray);
                 $this->session->set_flashdata('success','Record updated successfully');
                 redirect(base_url().'index.php/welcome/manage_product_serial');
             }

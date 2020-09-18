@@ -99,6 +99,40 @@
               </ul>
             </div>
           </li>
+
+		  <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#AMC" role="button" aria-expanded="false" aria-controls="AMC">
+              <i class="link-icon" data-feather="briefcase"></i>
+              <span class="link-title">AMC</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="AMC">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/allamcrecords" class="nav-link">All AMC Records</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/amcwithwarrent" class="nav-link">With Warrenty</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/productamc" class="nav-link">Product AMC</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/serviceamc" class="nav-link">Service AMC</a>
+				</li>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/activeamc" class="nav-link">Active AMC's</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/amcrenewed" class="nav-link">AMC Renewed</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/amcexpired" class="nav-link">AMC's Expired</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
          
         </ul>
       </div>

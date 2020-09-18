@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label"><h5>Email Address</h5></label>
-                                      <input type="text" name="email" class="form-control" placeholder="Enter Executive" value= "<?php echo set_value('email');?>">
+                                      <input type="email" name="email" class="form-control" placeholder="Enter Executive" value= "<?php echo set_value('email');?>">
                                       <?php echo form_error('email');?>
                                     </div>
                                   </div><!-- Col -->
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label"><h5>Mobile No.</h5></label>
-                                      <input type="text" name="mobile_no" class="form-control" placeholder="Enter Executive" value= "<?php echo set_value('mobile_no');?>">
+                                      <input type="number" name="mobile_no" class="form-control" placeholder="Enter Executive" value= "<?php echo set_value('mobile_no');?>">
                                       <?php echo form_error('mobile_no');?>
                                     </div>
                                     <div class="form-group">

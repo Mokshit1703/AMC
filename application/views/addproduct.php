@@ -7,7 +7,7 @@
                 <div class="col-md-12 stretch-card">
                     <div class="card card-custom">
                         <div class="card-body">
-                            <h6 class="card-title"><h4>Add Product</h4></h6><br>
+                            <h6 class="card-title"><h4>Add Product:</h4></h6><br>
                             <form method="post" action="<?php echo base_url().'index.php/welcome/addproduct';?>">
                               <div class="row">
                                   <div class="col-lg-5 my-2 ">
@@ -43,11 +43,18 @@
                                       <input type="text" name="product_warranty" class="form-control" placeholder="Enter Product Warranty" value= "<?php echo set_value('product_warranty');?>">
                                       <?php echo form_error('product_warranty');?>
                                     </div>
-                                    <div class="form-group">
-                                      <label class="control-label"><h5>Product Image</h5></label>
-                                      <input type="text" name="product_image" class="form-control" placeholder="Enter Product Image" value= "<?php echo set_value('product_image');?>">
-                                      <?php echo form_error('product_image');?>
-                                    </div>
+                                    
+                                      <div class="form-group">
+                                        <label class="control-label"><h5>Select Image</h5></label>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <h6 class="card-title">Add File</h6>
+                                            <p class="card-description">Upload File Here.</p>
+                                            <input type="file" name="select_file" id="myDropify" class="border"/>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    
                                     
                                   </div><!-- Col -->
                               </div><!-- Row -->

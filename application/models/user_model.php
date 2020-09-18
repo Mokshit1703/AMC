@@ -43,35 +43,35 @@
             $this->db->insert('new_executive',$fromarray);
             //$this->db->insert('new_executive',$fromarray);
         }
-        function update_customer($userid,$fromArray)
+        function update_customer($userid,$fromarray)
         {
             $this->db->where('sr_no',$userid);
-            $this->db->update('new_customer',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
+            $this->db->update('new_customer',$fromarray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
-        function update_executive($userid,$fromArray)
+        function update_executive($userid,$fromarray)
         {
             $this->db->where('sr_no',$userid);
-            $this->db->update('new_executive',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
+            $this->db->update('new_executive',$fromarray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
-        function update_product($userid,$fromArray)
+        function update_product($userid,$fromarray)
         {
             $this->db->where('sr_no',$userid);
-            $this->db->update('new_product',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
+            $this->db->update('new_product',$fromarray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
-        function update_product_group($userid,$fromArray)
+        function update_product_group($userid,$fromarray)
         {
             $this->db->where('sr_no',$userid);
-            $this->db->update('new_product_group',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
+            $this->db->update('new_product_group',$fromarray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
-        function update_product_model($userid,$fromArray)
+        function update_product_model($userid,$fromarray)
         {
             $this->db->where('sr_no',$userid);
-            $this->db->update('new_product_model',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
+            $this->db->update('new_product_model',$fromarray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
-        function update_product_serial($userid,$fromArray)
+        function update_product_serial($userid,$fromarray)
         {
             $this->db->where('sr_no',$userid);
-            $this->db->update('new_product_serial',$fromArray);  //  update users SET name=? ,email = ? where sr_no = ?;
+            $this->db->update('new_product_serial',$fromarray);  //  update users SET name=? ,email = ? where sr_no = ?;
         }
         function delete_customer($userid)
         {

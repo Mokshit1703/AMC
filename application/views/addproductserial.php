@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label"><h5>Product Price</h5></label>
-                                      <input type="text" name="product_price" class="form-control" placeholder="Enter product pricel" value= "<?php echo set_value('product_price');?>">
+                                      <input type="number" name="product_price" class="form-control" placeholder="Enter product pricel" value= "<?php echo set_value('product_price');?>">
                                       <?php echo form_error('product_price');?>
                                     </div>
                                   </div><!-- Col -->

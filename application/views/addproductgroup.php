@@ -7,7 +7,7 @@
                 <div class="col-md-12 stretch-card">
                     <div class="card card-custom">
                         <div class="card-body">
-                            <h6 class="card-title"><h4>Add New Executive:</h4></h6><br>
+                            <h6 class="card-title"><h4>Add Product Group:</h4></h6><br>
                             <form method="post" action="<?php echo base_url().'index.php/welcome/addproductgroup';?>">
                               <div class="row">
                                   <div class="col-lg-5 my-2 ">
