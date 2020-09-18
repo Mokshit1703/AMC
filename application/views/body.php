@@ -109,6 +109,27 @@
             <div class="collapse" id="AMC">
               <ul class="nav sub-menu">
                 <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/amcwithwarrent" class="nav-link">With Warrenty</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/productamc" class="nav-link">Produt AMC</a>
+                </li>
+				<li class="nav-item">
+                  <a href="/AMC/index.php/welcome/serviceamc" class="nav-link">Service AMC</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+		  <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#AMCreport" role="button" aria-expanded="false" aria-controls="AMCreport">
+              <i class="link-icon" data-feather="edit"></i>
+              <span class="link-title">AMC Report</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="AMCreport">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
                   <a href="/AMC/index.php/welcome/allamcrecords" class="nav-link">All AMC Records</a>
                 </li>
                 <li class="nav-item">
