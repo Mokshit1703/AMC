@@ -6,10 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>AMC | Admin</title>
 	<!-- core:css -->
-	<link rel="stylesheet" href="C:\xampp\htdocs\AMC\assets\vendors\core\core.css">
+	<link rel="stylesheet" href="../../../assets/vendors/core/core.css">
 	<!-- endinject -->
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="../../../assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<!-- end plugin css for this page -->
 	<!-- inject:css -->
 	<link rel="stylesheet" href="../../../assets/fonts/feather-font/css/iconfont.css">

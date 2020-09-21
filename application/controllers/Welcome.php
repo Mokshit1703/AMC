@@ -535,4 +535,9 @@ class Welcome extends CI_Controller {
 		$data['new_product_serial']= $new_product_serial;
 		$this->load->view('manage_product_serial',$data);
 	}
+
+	public function productserviceamc()
+	{
+		$this->load->view('productserviceamc');
+	}
 }

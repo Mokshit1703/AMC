@@ -20,6 +20,7 @@
 	<script src="../../../assets/js/template.js"></script>
     <script src="../../../assets/js/data-table.js"></script>
 	<!-- endinject -->
+	
 	<!-- custom js for this page -->
   <!-- end custom js for this page -->
 </body>
