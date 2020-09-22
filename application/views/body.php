@@ -1,166 +1,167 @@
-
 <body class="sidebar-dark">
 	<div class="main-wrapper">
 
 		<!-- partial:../../partials/_sidebar.html -->
 		<nav class="sidebar">
-      <div class="sidebar-header">
-        <a href="#" class="sidebar-brand">
-          Admin<span><i data-feather="user"></i></span>
-        </a>
-        <div class="sidebar-toggler not-active">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div class="sidebar-body">
-        <ul class="nav">
-          
-          <li class="nav-item">
-            <a href="/AMC/index.php/welcome/dashboard" class="nav-link">
-              <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Dashboard</span>
-            </a>
-          </li>
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#Customers" role="button" aria-expanded="false" aria-controls="Customers">
-              <i class="link-icon" data-feather="users"></i>
-              <span class="link-title">Customer</span>
-              <i class="link-arrow" data-feather="chevron-down"></i>
-            </a>
-            <div class="collapse" id="Customers">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/addnewcustomer" class="nav-link">Add New Customer</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/managecustomer" class="nav-link">Manage Customer</a>
-                </li>
-                
-              </ul>
-            </div>
-          </li>
+			<div class="sidebar-header">
+				<a href="#" class="sidebar-brand">
+					Admin<span><i data-feather="user"></i></span>
+				</a>
+				<div class="sidebar-toggler not-active">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="sidebar-body">
+				<ul class="nav">
 
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#Executive" role="button" aria-expanded="false" aria-controls="Executive">
-              <i class="link-icon" data-feather="user-x"></i>
-              <span class="link-title">Executive</span>
-              <i class="link-arrow" data-feather="chevron-down"></i>
-            </a>
-            <div class="collapse" id="Executive">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/addnewexecutive" class="nav-link">Add New Executive</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manageexecutive" class="nav-link">Manage Executive</a>
-                </li>
-              </ul>
-            </div>
-          </li>
+					<li class="nav-item">
+						<a href="/AMC/index.php/welcome/dashboard" class="nav-link">
+							<i class="link-icon" data-feather="box"></i>
+							<span class="link-title">Dashboard</span>
+						</a>
+					</li>
 
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#Products" role="button" aria-expanded="false" aria-controls="Products">
-              <i class="link-icon" data-feather="tag"></i>
-              <span class="link-title">Products</span>
-              <i class="link-arrow" data-feather="chevron-down"></i>
-            </a>
-            <div class="collapse" id="Products">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/addproductgroup" class="nav-link">Add Product Group</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/addproduct" class="nav-link">Add Product</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/addproductmodel" class="nav-link">Add Product Model</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/addproductserial" class="nav-link">Add Product Serial</a>
-				</li>
-				<div class="separator separator-dashed my-10">
-                </div>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manage_product_group" class="nav-link">Manage Product Group</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manage_product" class="nav-link">Manage Product</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manage_product_model" class="nav-link">Manage Product Model</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/manage_product_serial" class="nav-link">Manage Product Serial</a>
-                </li>
-              </ul>
-            </div>
-          </li>
 
-		  <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#AMC" role="button" aria-expanded="false" aria-controls="AMC">
-              <i class="link-icon" data-feather="briefcase"></i>
-              <span class="link-title">AMC</span>
-              <i class="link-arrow" data-feather="chevron-down"></i>
-            </a>
-            <div class="collapse" id="AMC">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/product_amc" class="nav-link">Product AMC</a>
-				</li>
-				
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/service_amc" class="nav-link">Service AMC</a>
-                </li>
-              </ul>
-            </div>
-          </li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="collapse" href="#Customers" role="button" aria-expanded="false" aria-controls="Customers">
+							<i class="link-icon" data-feather="users"></i>
+							<span class="link-title">Customer</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" id="Customers">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/addnewcustomer" class="nav-link">Add New Customer</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/managecustomer" class="nav-link">Manage Customer</a>
+								</li>
 
-		  <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#AMCreport" role="button" aria-expanded="false" aria-controls="AMCreport">
-              <i class="link-icon" data-feather="edit"></i>
-              <span class="link-title">AMC Report</span>
-              <i class="link-arrow" data-feather="chevron-down"></i>
-            </a>
-            <div class="collapse" id="AMCreport">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/allamcrecords" class="nav-link">All AMC Records</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/amcwithwarrent" class="nav-link">With Warrenty</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/productamc" class="nav-link">Product AMC</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/serviceamc" class="nav-link">Service AMC</a>
-				</li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/activeamc" class="nav-link">Active AMC's</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/amcrenewed" class="nav-link">AMC Renewed</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/amcexpired" class="nav-link">AMC's Expired</a>
-                </li>
-              </ul>
-            </div>
-          </li>
+							</ul>
+						</div>
+					</li>
 
-         
-        </ul>
-      </div>
-    </nav>
-   
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="collapse" href="#Executive" role="button" aria-expanded="false" aria-controls="Executive">
+							<i class="link-icon" data-feather="user-x"></i>
+							<span class="link-title">Executive</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" id="Executive">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/addnewexecutive" class="nav-link">Add New Executive</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/manageexecutive" class="nav-link">Manage Executive</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="collapse" href="#Products" role="button" aria-expanded="false" aria-controls="Products">
+							<i class="link-icon" data-feather="tag"></i>
+							<span class="link-title">Products</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" id="Products">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/addproductgroup" class="nav-link">Add Product Group</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/addproduct" class="nav-link">Add Product</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/addproductmodel" class="nav-link">Add Product Model</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/addproductserial" class="nav-link">Add Product Serial</a>
+								</li>
+								<div class="separator separator-dashed my-10">
+								</div>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/manage_product_group" class="nav-link">Manage Product Group</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/manage_product" class="nav-link">Manage Product</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/manage_product_model" class="nav-link">Manage Product Model</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/manage_product_serial" class="nav-link">Manage Product Serial</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="collapse" href="#AMC" role="button" aria-expanded="false" aria-controls="AMC">
+							<i class="link-icon" data-feather="briefcase"></i>
+							<span class="link-title">AMC</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" id="AMC">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/product_amc" class="nav-link">Product AMC</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/edit_service_amc" class="nav-link">edit service AMC</a>
+
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/service_amc" class="nav-link">Service AMC</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="collapse" href="#AMCreport" role="button" aria-expanded="false" aria-controls="AMCreport">
+							<i class="link-icon" data-feather="edit"></i>
+							<span class="link-title">AMC Report</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" id="AMCreport">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/allamcrecords" class="nav-link">All AMC Records</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/amcwithwarrent" class="nav-link">With Warrenty</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/productamc" class="nav-link">Product AMC</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/serviceamc" class="nav-link">Service AMC</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/activeamc" class="nav-link">Active AMC's</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/amcrenewed" class="nav-link">AMC Renewed</a>
+								</li>
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/amcexpired" class="nav-link">AMC's Expired</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+
+				</ul>
+			</div>
+		</nav>
+
 		<!-- partial -->
-	
+
 		<div class="page-wrapper">
-				
+
 			<!-- partial:../../partials/_navbar.html -->
 			<nav class="navbar">
 				<a href="#" class="sidebar-toggler">
@@ -183,13 +184,13 @@
 								<i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="font-weight-medium ml-1 mr-1">English</span>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="languageDropdown">
-                <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-us" title="us" id="us"></i> <span class="ml-1"> English </span></a>
-                <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-fr" title="fr" id="fr"></i> <span class="ml-1"> French </span></a>
-                <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-de" title="de" id="de"></i> <span class="ml-1"> German </span></a>
-                <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-pt" title="pt" id="pt"></i> <span class="ml-1"> Portuguese </span></a>
-                <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-es" title="es" id="es"></i> <span class="ml-1"> Spanish </span></a>
+								<a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-us" title="us" id="us"></i> <span class="ml-1"> English </span></a>
+								<a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-fr" title="fr" id="fr"></i> <span class="ml-1"> French </span></a>
+								<a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-de" title="de" id="de"></i> <span class="ml-1"> German </span></a>
+								<a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-pt" title="pt" id="pt"></i> <span class="ml-1"> Portuguese </span></a>
+								<a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-es" title="es" id="es"></i> <span class="ml-1"> Spanish </span></a>
 							</div>
-            </li>
+						</li>
 						<li class="nav-item dropdown nav-apps">
 							<a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i data-feather="grid"></i>
@@ -201,10 +202,18 @@
 								</div>
 								<div class="dropdown-body">
 									<div class="d-flex align-items-center apps">
-										<a href="../../pages/apps/chat.html"><i data-feather="message-square" class="icon-lg"></i><p>Chat</p></a>
-										<a href="../../pages/apps/calendar.html"><i data-feather="calendar" class="icon-lg"></i><p>Calendar</p></a>
-										<a href="#"><i data-feather="mail" class="icon-lg"></i><p>Email</p></a>
-										<a href="../../pages/general/profile.html"><i data-feather="instagram" class="icon-lg"></i><p>Profile</p></a>
+										<a href="../../pages/apps/chat.html"><i data-feather="message-square" class="icon-lg"></i>
+											<p>Chat</p>
+										</a>
+										<a href="../../pages/apps/calendar.html"><i data-feather="calendar" class="icon-lg"></i>
+											<p>Calendar</p>
+										</a>
+										<a href="#"><i data-feather="mail" class="icon-lg"></i>
+											<p>Email</p>
+										</a>
+										<a href="../../pages/general/profile.html"><i data-feather="instagram" class="icon-lg"></i>
+											<p>Profile</p>
+										</a>
 									</div>
 								</div>
 								<div class="dropdown-footer d-flex align-items-center justify-content-center">
@@ -230,7 +239,7 @@
 											<div class="d-flex justify-content-between align-items-center">
 												<p>Leonardo Payne</p>
 												<p class="sub-text text-muted">2 min ago</p>
-											</div>	
+											</div>
 											<p class="sub-text text-muted">Project status</p>
 										</div>
 									</a>
@@ -242,7 +251,7 @@
 											<div class="d-flex justify-content-between align-items-center">
 												<p>Carl Henson</p>
 												<p class="sub-text text-muted">30 min ago</p>
-											</div>	
+											</div>
 											<p class="sub-text text-muted">Client meeting</p>
 										</div>
 									</a>
@@ -252,9 +261,9 @@
 										</div>
 										<div class="content">
 											<div class="d-flex justify-content-between align-items-center">
-												<p>Jensen Combs</p>												
+												<p>Jensen Combs</p>
 												<p class="sub-text text-muted">1 hrs ago</p>
-											</div>	
+											</div>
 											<p class="sub-text text-muted">Project updates</p>
 										</div>
 									</a>
@@ -400,7 +409,3 @@
 				</div>
 			</nav>
 			<!-- partial -->
-
-			
-
-			
