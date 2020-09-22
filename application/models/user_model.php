@@ -5,6 +5,12 @@
         function index($fromarray,$index,$data){
             $this->load->view('index/'.$index, $data);
         }
+        function product_amc(){
+            return $new_customer = $this->db->get('new_customer')->result_array();
+        }
+        function service_amc(){
+            return $new_customer = $this->db->get('new_customer')->result_array();
+        }
         function managecustomer(){
             return $new_customer = $this->db->get('new_customer')->result_array();
         }

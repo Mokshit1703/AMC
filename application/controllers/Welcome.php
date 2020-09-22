@@ -535,6 +535,22 @@ class Welcome extends CI_Controller {
 		$data['new_product_serial']= $new_product_serial;
 		$this->load->view('manage_product_serial',$data);
 	}
+	public function product_amc()
+	{
+		$this->load->model('User_model');
+		$product_amc = $this->User_model->product_amc();
+		$data = array();
+		$data['product_amc']= $product_amc;
+		$this->load->view('product_amc',$data);
+	}
+	public function service_amc()
+	{
+		$this->load->model('User_model');
+		$service_amc = $this->User_model->service_amc();
+		$data = array();
+		$data['service_amc']= $service_amc;
+		$this->load->view('service_amc',$data);
+	}
 
 	public function productserviceamc()
 	{

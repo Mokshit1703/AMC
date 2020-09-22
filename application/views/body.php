@@ -109,7 +109,11 @@
             <div class="collapse" id="AMC">
               <ul class="nav sub-menu">
                 <li class="nav-item">
-                  <a href="/AMC/index.php/welcome/productserviceamc" class="nav-link">Product & Service AMC</a>
+                  <a href="/AMC/index.php/welcome/product_amc" class="nav-link">Product AMC</a>
+				</li>
+				
+                <li class="nav-item">
+                  <a href="/AMC/index.php/welcome/service_amc" class="nav-link">Service AMC</a>
                 </li>
               </ul>
             </div>
