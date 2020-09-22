@@ -111,9 +111,6 @@
 									<a href="/AMC/index.php/welcome/product_amc" class="nav-link">Product AMC</a>
 								</li>
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/edit_service_amc" class="nav-link">edit service AMC</a>
-
-								<li class="nav-item">
 									<a href="/AMC/index.php/welcome/service_amc" class="nav-link">Service AMC</a>
 								</li>
 							</ul>
