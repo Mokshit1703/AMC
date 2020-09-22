@@ -20,7 +20,7 @@
 	<script src="../../assets/vendors/feather-icons/feather.min.js"></script>
 	<script src="../../assets/js/template.js"></script>
     <script src="../../assets/js/data-table.js"></script>
-	<script src="../../../assets/js/wizard.js"></script>
+	<script src="../../assets/js/wizard.js"></script>
 	<!-- endinject -->
 	
 	<!-- custom js for this page -->

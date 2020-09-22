@@ -11,7 +11,6 @@
     <!-- plugin css for this page -->
 	<link rel="stylesheet" href="../../assets/vendors/jquery-steps/jquery.steps.css">
     <link rel="stylesheet" href="../../assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<!-- end plugin css for this page -->
 	<!-- inject:css -->
 	<link rel="stylesheet" href="../../assets/fonts/feather-font/css/iconfont.css">
