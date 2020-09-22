@@ -38,7 +38,7 @@
                                             <td><?php echo $user['mobile_no']; ?></td>
                                             <td>
                                                 <div class="btn-group d-flex" role="group">
-                                                    <a title="Quote AMC without Warranty" href="<?php echo base_url() . 'index.php/welcome/edit_product_amc' . $user['sr_no'] ?>" type="button" class="btn btn-primary"> <i class="" data-feather="edit"></i> </a>
+                                                    <a title="Quote AMC without Warranty" href="<?php echo base_url() . 'index.php/welcome/edit_product_amc' ?>" type="button" class="btn btn-primary"> <i class="" data-feather="edit"></i> </a>
                                                 </div>
                                             </td>
                                         </tr>

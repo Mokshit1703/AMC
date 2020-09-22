@@ -140,8 +140,5 @@
             return $user = $this->db->get('new_product_serial')->row_array();  // select * from users where sr_no = ?;
         }
 
-        function productserviceamc($fromarray,$productserviceamc,$data){
-            $this->load->view('productserviceamc/'.$productserviceamc, $data);
-        }
     }
 ?>

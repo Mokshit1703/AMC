@@ -26,6 +26,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+	public function edit_product_amc()
+	{
+		$this->load->view('edit_product_amc');
+	}
 	public function edit_service_amc()
 	{
 		$this->load->view('edit_service_amc');
