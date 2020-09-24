@@ -38,6 +38,14 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('all_amc_records');
 	}
+	public function data_product_amc()
+	{
+		$this->load->view('data_product_amc');
+	}
+	public function data_service_amc()
+	{
+		$this->load->view('data_service_amc');
+	}
 	public function addnewexecutive(){
 		$this->load->model('User_model');
 		$this->form_validation->set_rules('executive_code', 'Executive Code','required');

@@ -4,7 +4,7 @@
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Customer</a></li>
-            <li class="breadcrumb-item active" aria-current="page">All AMC Records</li>
+            <li class="breadcrumb-item active" aria-current="page">Data Service AMC</li>
         </ol>
     </nav>
 
@@ -12,7 +12,7 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h6 class="card-title">All AMC Records</h6>
+                    <h6 class="card-title">Data Service AMC</h6>
                     <div class="table-responsive">
                         <table id="dataTableExample" class="table">
                             <thead>
@@ -21,12 +21,12 @@
                                     <th>AMC Code</th>
                                     <th>AMC Type</th>
                                     <th>Customer</th>
-                                    <th>Address</th>
+                                    
                                     <th>Mobile No.</th>
                                     <th>AMC Range</th>
                                     
-                                    <th>Renewed</th>
-                                    <th>Action</th>
+                                    
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,11 +37,11 @@
                                             <td><?php echo $user['customer_code']; ?></td>
                                             <td><?php echo $user['customer_name']; ?></td>
                                             <td><?php echo $user['email']; ?></td>
-                                            <td><?php echo $user['customer_type']; ?></td>
+                                            
                                             <td><?php echo $user['address']; ?></td>
                                             <td><?php echo $user['mobile_no']; ?></td>
                                             
-                                            <td><?php echo "status"; ?></td>
+                                           
 
                                             <td>
                                                 <div class="btn-group flex-wrap">
