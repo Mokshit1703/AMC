@@ -22,4 +22,5 @@
 	<!-- End layout styles -->
 	<link rel="shortcut icon" href="../../assets/images/favicon.png" />
 
+	
 </head>
