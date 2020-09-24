@@ -25,14 +25,44 @@
                                       <input type="date" name="product_brand" class="form-control"  value= "<?php echo set_value('product_brand');?>">
                                       <?php echo form_error('product_brand');?>
                                     </div>
-                                    <div class="form-group">
-                                      <label class="control-label"><h5>New/Renew AMC:</h5></label>
-                                      <input type="radio" id="new" name="product_name" class="form-control" placeholder="Enter Product Name" value= "<?php echo set_value('product_name');?>">
-                                      <?php echo form_error('product_name');?>
-                                      <label for="new"><h6>New Amc</h6></label><br>
-                                      <input type="radio" id="renew" name="product_name" class="form-control" placeholder="Enter Product Name" value= "<?php echo set_value('product_name');?>">
-                                      <?php echo form_error('product_name');?>
-                                      <label for="renew"><h6>Renewal Amc</h6></label><br>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 control-label text-sm-left pt-2">New/Renew AMC ? * </label>
+                                        <div class="col-sm-4">
+                                            <div class="radio-custom radio-primary">
+                                                <input type="radio" onclick="javascript:AMCTypeCheck();" id="NoRenew" value="1" name="AMCType" checked="">
+                                                <label for="NoRenew">New AMC</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="radio-custom radio-success">
+                                                <input type="radio" onclick="javascript:AMCTypeCheck();" id="renew" value="0" name="AMCType">
+                                                <label for="renew"> Renewal AMC </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        window.onload = function() {
+                                            document.getElementById('ifYes').style.display = 'none';
+                                            document.getElementById('renew_amccode').required = false;
+                                        };
+
+                                        function AMCTypeCheck() {
+                                            if (document.getElementById('renew').checked) {
+                                                document.getElementById('ifYes').style.display = '';
+                                                document.getElementById('renew_amccode').required = true;
+
+                                            } else document.getElementById('ifYes').style.display = 'none';
+                                            document.getElementById('renew_amccode').required = false;
+                                        }
+                                    </script>
+                                    <div class="form-group row" id="ifYes">
+                                        <label class="col-sm-4 control-label text-sm-left pt-2">Select Expired AMC * </label>
+                                        <div class="col-sm-8">
+                                            <select data-plugin-selectTwo name="renew_amccode" id="renew_amccode" required class="form-control populate placeholder" data-plugin-options='{ "placeholder": "Select Expred AMC", "allowClear": true }'>
+                                                <option value=""></option>
+                                                <option value="AWMT-00238">AWMT-00238 - 2020-07-28</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     
                                   </div><!-- Col -->
@@ -55,48 +85,33 @@
                                       <?php echo form_error('product_brand');?>
                                       
                                     </div>
-
-                                      <div class="form-group">
-                                        <label class="control-label"><h5>Select Image</h5></label>
-                                        <div class="card">
-                                          <div class="card-body">
-                                            <h6 class="card-title">Add File</h6>
-                                            <p class="card-description">Upload File Here.</p>
-                                            <input type="file" name="select_file" id="myDropify" class="border"/>
-                                          </div>
-                                        </div>
-                                      </div>
                                     
-                                    
-                                  </div><!-- Col -->
-                              </div><!-- Row -->
-                              <div class="separator separator-dashed my-10">
-                              </div> 
-                          
-                            
-
-                              <span id="is-availability-status"></span>
-                   <div class="row">
+                                      </div><!-- Col -->
+                </div><!-- Row -->
+                <div class="separator separator-dashed my-10">
+                </div>
+                <?php include('jscript.php'); ?>              
+                <div class="row">
                   <div class="col-lg-12">
                     <div class="tabs tabs-primary">
-                      <ul class="nav nav-tabs nav-justified">
-                        <li class="nav-item active"> <a class="nav-link" href="#product_tab" data-toggle="tab"><i class="fas fa-tags"></i> Products Under AMC</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#service_tab" data-toggle="tab"><i class="fas fa-wrench"></i> Service Schedule</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#payment_tab" data-toggle="tab"><i class="fas fa-rupee-sign"></i> Schedule Payment</a> </li>
+                      <ul class="nav nav-tabs nav-justified ">
+                        <li class="nav-item active  border border-dark"> <a class="nav-link" href="#product_tab" data-toggle="tab"><i class="fas fa-tags"></i><h4> Products Under AMC</h4></a> </li>
+                        <li class="nav-item active border border-dark"> <a class="nav-link" href="#service_tab" data-toggle="tab"><i class="fas fa-wrench"></i><h4> Service Schedule</h4></a> </li>
+                        <li class="nav-item active border border-dark"> <a class="nav-link" href="#payment_tab" data-toggle="tab"><i class="fas fa-rupee-sign"></i><h4> Schedule Payment</h4></a> </li>
                       </ul>
                       <div class="tab-content">
                         <div id="product_tab" class="tab-pane active">
-                          <div class="card-body">
-                            <div class="col-lg-12" id="prodserialreload">
+                          <div class="card-body  border border-dark">
+                            <div class="col-lg-12 " id="prodserialreload">
 						  
                                 <table class="table">
                                   <thead>
                                     <tr>
-                                      <td>Product Name</td>
-                                      <td>Qty.</td>
-                                      <td>Price</td>
-                                      <td>Total</td>
-                                      <td>Action</td>
+                                      <td><h6>Product Name</h6></td>
+                                      <td><h6>Qty.</h6></td>
+                                      <td><h6>Price</h6></td>
+                                      <td><h6>Total</h6></td>
+                                      <td><h6>Action</h6></td>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -152,7 +167,6 @@
                         
 										</select>
 										</div>
-                                          <a id="MyButton" style="color:black;"><i class="fas fa-sync"></i> Refresh</a> | <a href="http://www.xlinkinfocom.com/amc-call-management-system/app//admin/prodserialadd.php" target="_blank" style="color:black;"><i class="fas fa-plus"></i> Add New</a>
                                           </div></td>
                                       <td ><div class="form-group" >
                                           <input name="prodqty2" type="text"  required class="form-control" id="prodqty" placeholder="Product Quantity" onBlur="prodtotalval()" value="1"  >
@@ -162,14 +176,13 @@
        <select data-plugin-selectTwo name="prodprice" id="prodprice" unique="prodserialcode" required class="form-control populate placeholder" data-plugin-options='{ "placeholder": "Product Price", "allowClear": false }'>
                         
                       </select>
-						  
-                           
                           </div>
 									</td>
-                                      <td ><div class="form-group" >
+                                      <td><div class="form-group" >
                                           <input name="prodtotal2" type="text" required class="form-control" id="prodtotal" placeholder="Total Value" readonly  >
                                         </div></td>
-                                      <td ><button type="button" name="reset" value="Add new row" onclick="prodtotalval()" class="btn btn-warning add-row"><i class="fa fa-plus"></i> Add Item</button></td>
+                                      <td ><div class="form-group" ><button type="button" name="reset" value="Add new row" onclick="prodtotalval()" class="btn btn-warning add-row"><i class="fa fa-plus"></i> Add Item</button>
+                                      </div></td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -178,8 +191,8 @@
                                     <thead>
                                       <tr>
                                         <th>Select</th>
-                                        <th>Product Serial Code</th>
-										                    <th>Product Name</th>
+                                        <th>>Product Serial Code</th>
+										<th>Product Name</th>
                                         <th>Product Qty.</th>
                                         <th>Price</th>
                                         <th>Total</th>
@@ -188,18 +201,19 @@
                                     <tbody class="productdetails">
                                     </tbody>
                                   </table>
+                                  <br>
                                   <button type="button" class="btn btn-danger delete-row"><i class="fa fa-trash"></i> Delete UN-CHECKED Products</button>
                                 </div>
                               </div>                          </div>
                         </div>
                         <div id="service_tab" class="tab-pane">
-                          <div class="card-body">
+                          <div class="card-body border border-dark">
                             <div class="col-lg-12" id="">
                               <table class="tablex">
 							  <thead>
                                   <tr>
                                     <td> Number of Service </td>
-                                    <td> Commnent</td>
+                                    <td>Commnent </td>
                                     
                                   </tr>
                                 </thead>
@@ -263,8 +277,8 @@
                           </div>
                         </div>
                         <div id="payment_tab" class="tab-pane">
-                          <div class="panel-body">
-                            <div class="table-responsive col-lg-12" id="">
+                          <div class="card-body border border-dark">
+                            <div class="table-responsive col-lg-12 " id="">
                               <table class="tablex">
                                 <thead>
                                   <tr>
@@ -273,7 +287,7 @@
                                     <td> GST (%)</td>
                                     <td> GST Amount</td>
                                     <td> Total Amount</td>
-                                    <td> No of Installment</td>
+                                    <td>No of Installment</td>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -346,30 +360,26 @@
                     </div>
                   </div>
                 </div>
-                <footer class="card-footer">
+                
                   <div class="row justify-content-end">
                     <div class="col-sm-12">
-                      <button class="btn btn-success " id="submit" type="submit" name="submit" value="Save and Submit"><i class="fa fa-save"></i>&nbsp;&nbsp;<span class="bold">Submit</span></button>
-                      <a href="<?php echo base_url().'index.php/welcome/productserviceamc';?>" class="btn-secondary btn">Reset</a>
+                    <button class="btn btn-primary ">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <a href="<?php echo base_url() . 'index.php/welcome/product_amc'; ?>" class="btn-danger btn">Cancle</a>
+                      
                     </div>
                   </div>
-                </footer>
+                
               </form>
-              </div>
-                        
-                    </div>
-                </div>
-            </div>          		
-        </div>
-    </div>
-</div>
-            </div>
-          </section>
+
+
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
-</section>
+</div>
+</div>
 
 		<!-- Vendor -->
 		
@@ -401,7 +411,7 @@
 		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.print.min.js"></script>
 		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/datatables/extras/TableTools/JSZip-2.5.0/jszip.min.js"></script>
 		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/datatables/extras/TableTools/pdfmake-0.1.32/pdfmake.min.js"></script>
-		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/datatables/extras/TableTools/pdfmake-0.1.32/vfs_fonts.js">
+		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/datatables/extras/TableTools/pdfmake-0.1.32/vfs_fonts.js"></script>
 		
 		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/js/examples/examples.datatables.default.js"></script>
 		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/js/examples/examples.datatables.row.with.details.js"></script>
@@ -425,7 +435,7 @@
 		
 		
       
-<style> 
+        <style> 
 
 .dataTables_wrapper table,th,td { font-size: 12px }
 
@@ -832,10 +842,5 @@ $(document).ready(function() { "use strict";
 }
 
 
-    </script>
-							
-
-                           
-                            					
-                        
+    </script>           
 <?php include('footer.php'); ?>
