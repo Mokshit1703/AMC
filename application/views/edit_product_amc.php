@@ -485,6 +485,7 @@ $(document).keydown(function(e) {
                 
                   <div class="row justify-content-end">
                     <div class="col-sm-12">
+                    <br>
                     <button class="btn btn-primary ">Submit</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
                     <a href="<?php echo base_url() . 'index.php/welcome/product_amc'; ?>" class="btn-danger btn">Cancle</a>
