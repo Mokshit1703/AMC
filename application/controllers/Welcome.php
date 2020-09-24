@@ -34,6 +34,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('edit_service_amc');
 	}
+	public function all_amc_records()
+	{
+		$this->load->view('all_amc_records');
+	}
 	public function addnewexecutive(){
 		$this->load->model('User_model');
 		$this->form_validation->set_rules('executive_code', 'Executive Code','required');

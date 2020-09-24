@@ -129,9 +129,9 @@
                                             <ul class="nav nav-tabs nav-justified">
                                                 <li class="nav-item active border border-dark">
                                                     <a class="nav-link" href="#service_tab" data-toggle="tab">
-                                                        <i class=""data-feather=""></i> Service Schedule</a> </li>
+                                                        <i class=""data-feather=""></i> <h4>Service Schedule</h4></a> </li>
                                                 <li class="nav-item  border border-dark"> <a class="nav-link" href="#payment_tab" data-toggle="tab">
-                                                    <i  data-feather="chevron-right"></i> Schedule Payment</a>
+                                                    <i  data-feather="chevron-right"></i><h4> Schedule Payment</h4></a>
                                                 </li>
                                             </ul>
                                             <div class="tab-content">
@@ -174,7 +174,7 @@
                                                                             <div class="form-group row">
                                                                                 <div class="col">
                                                                                     <div class="input-group ">
-                                                                                        <button type="button" name="reset" id="DeleteService" value="Clear Fields" onclick="clearBox('servicedates2')" class="btn btn-warning clear-row"><i class="fa fa-trash"></i> Clear All</button>
+                                                                                        <button type="button" name="reset" id="DeleteService" value="Clear Fields" onclick="clearBox('servicedates2')" class="btn btn-warning clear-row"><i class=""></i> Clear All</button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -251,7 +251,7 @@
                                                                         <td>
                                                                             <div class="form-group row">
                                                                                 <div class="col ">
-                                                                                    <button type="button" name="submit" id="AddNewInstallment" value="Set Installment" class="btn btn-info add-installment" disabled="disabled"><i class="fa fa-plus"></i> Set Installment</button>
+                                                                                    <button type="button" name="submit" id="AddNewInstallment" value="Set Installment" class="btn btn-info add-installment" disabled="disabled"><i class=""></i> Set Installment</button>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -259,7 +259,7 @@
                                                                         <td>
                                                                             <div class="form-group row">
                                                                                 <div class="col ">
-                                                                                    <button type="button" name="reset" id="DeleteInstallment" value="Clear Fields" onclick="clearBox2('installments2')" class="btn btn-warning clear-row"><i class="fa fa-trash"></i> Clear All</button>
+                                                                                    <button type="button" name="reset" id="DeleteInstallment" value="Clear Fields" onclick="clearBox2('installments2')" class="btn btn-warning clear-row"><i class=""></i> Clear All</button>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -291,6 +291,8 @@
                                         <div class="col-sm-12"><br>
                                             <button class="btn btn-primary"><span class="bold">Submit</span></button>
                                             <button class="btn btn-secondary">Reset</button>
+                                            <a href="<?php echo base_url() . 'index.php/welcome/service_amc'; ?>" class="btn-danger btn">Cancle</a>
+
                                         </div>
                                     </div>
                                 

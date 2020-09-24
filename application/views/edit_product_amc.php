@@ -21,16 +21,16 @@
                       <?php echo form_error('product_code'); ?>
                     </div>
                     <div class="form-group">
-                      <label class="control-label">
-                        <h5>AMC Date Range:</h5>
-                      </label>
-                      <h6> From: </h6>
-                      <input type="date" name="product_brand" class="form-control" value="<?php echo set_value('product_brand'); ?>">
-                      <?php echo form_error('product_brand'); ?>
-                      <h6> To: </h6>
-                      <input type="date" name="product_brand" class="form-control" value="<?php echo set_value('product_brand'); ?>">
-                      <?php echo form_error('product_brand'); ?>
-                    </div>
+                                                <label class="control-label">AMC Date Range * </label>
+                                                    <div class="input-daterange input-group" data-plugin-datepicker="">
+                                                        <span class="input-group-prepend">
+                                                            <span class="input-group-text border-left-0 border-right-0 rounded-0">from<i class="" data-feather="caleder"></i> </span>
+                                                        </span>
+                                                        <input readonly="" name="amcissuedate" id="amcissuedate" type="text" class="form-control">
+                                                        <span class="input-group-text border-left-0 border-right-0 rounded-0"> to </span>
+                                                        <input readonly="" name="amcenddate" id="amcenddate" type="text" class="form-control">
+                                                    </div>
+                                            </div>
                     <div class="form-group row">
                       <label class="col-sm-4 control-label text-sm-left pt-2">New/Renew AMC ? * </label>
                       <div class="col-sm-4">

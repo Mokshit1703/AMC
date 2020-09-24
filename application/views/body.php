@@ -126,25 +126,23 @@
 						<div class="collapse" id="AMCreport">
 							<ul class="nav sub-menu">
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/allamcrecords" class="nav-link">All AMC Records</a>
+									<a href="/AMC/index.php/welcome/all_amc_records" class="nav-link">All AMC Records</a>
+								</li>
+								
+								<li class="nav-item">
+									<a href="/AMC/index.php/welcome/product_amc" class="nav-link">Product AMC</a>
 								</li>
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/amcwithwarrent" class="nav-link">With Warrenty</a>
+									<a href="/AMC/index.php/welcome/service_amc" class="nav-link">Service AMC</a>
 								</li>
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/productamc" class="nav-link">Product AMC</a>
+									<a href="/AMC/index.php/welcome/active_amc" class="nav-link">Active AMC's</a>
 								</li>
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/serviceamc" class="nav-link">Service AMC</a>
+									<a href="/AMC/index.php/welcome/amc_renewed" class="nav-link">AMC Renewed</a>
 								</li>
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/activeamc" class="nav-link">Active AMC's</a>
-								</li>
-								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/amcrenewed" class="nav-link">AMC Renewed</a>
-								</li>
-								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/amcexpired" class="nav-link">AMC's Expired</a>
+									<a href="/AMC/index.php/welcome/amc_expired" class="nav-link">AMC's Expired</a>
 								</li>
 							</ul>
 						</div>
