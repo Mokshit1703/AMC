@@ -1,5 +1,7 @@
 <?php include('header.php'); ?>
 <?php include('body.php'); ?>
+<?php include('jscript.php'); ?>
+
 <div class="page-content">
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
@@ -19,13 +21,16 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label text-sm-left pt-2">AMC Code * </label>
                                         <div class="col-sm-8">
-                                            <input name="amccode" value="AWMT-00540" readonly="" type="text" required="" class="form-control required" id="amccode" onkeydown="upperCaseF(this)">
+                                            <input name="amccode" value="" readonly="" type="text" required="" class="form-control required" id="amccode" onkeydown="upperCaseF(this)">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label text-sm-left pt-2">AMC Date Range * </label>
                                         <div class="col-sm-8">
-                                            <div class="input-daterange input-group" data-plugin-datepicker=""> <span class="input-group-prepend"> <span class="input-group-text"> <i class="fas fa-calendar-alt"></i> </span> </span>
+                                            <div class="input-daterange input-group" data-plugin-datepicker="">
+                                                <span class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="" data-feather="caleder"></i> </span>
+                                                </span>
                                                 <input readonly="" name="amcissuedate" id="amcissuedate" type="text" class="form-control">
                                                 <span class="input-group-text border-left-0 border-right-0 rounded-0"> to </span>
                                                 <input readonly="" name="amcenddate" id="amcenddate" type="text" class="form-control">
@@ -336,309 +341,309 @@
     <script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/js/examples/examples.modals.js"></script>
 
 
-      
-<style> 
 
-.dataTables_wrapper table,th,td { font-size: 12px }
+    <style>
+        .dataTables_wrapper table,
+        th,
+        td {
+            font-size: 12px
+        }
+    </style>
 
-</style>   
-      
-<script type="text/javascript">
-$(document).keydown(function(e) {
-    if (e.keyCode == 27) return false;
-});
-	
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
-    }
-    return true;
-}
+    <script type="text/javascript">
+        $(document).keydown(function(e) {
+            if (e.keyCode == 27) return false;
+        });
 
-function isPrice(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (((event.which != 46 || (event.which == 46 && $(this).val() == '')) ||
-            $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
-        return false;
-    }
-    return true;
-}
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
 
-
-</script>
-
-
-
-<script>
- (function($) {
-
-	'use strict';
-
-	if ( $.isFunction($.fn[ 'bootstrapDP' ]) ) {
-
-		$(function() {
-			
-			$('#amcissuedate').bootstrapDP().on('changeDate', function(e) {
-				
-				var endDate = new Date(e.date);
-				endDate.setFullYear(endDate.getFullYear() + 1);
-				
-				$('#amcenddate').bootstrapDP('update', endDate);
-				
-			});
-			
-			$('#amcenddate').bootstrapDP();
-
-			
-		});
-
-	}
-
-}).apply(this, [jQuery]);	
-    </script> 
-
-<script>
-function upperCaseF(a){ "use strict";
-    setTimeout(function(){
-        a.value = a.value.toUpperCase();
-    }, 1);
-}
-	
-</script> 
-
-<script type="text/javascript">
-$(document).ready(function() { "use strict";
-    
-	$("#prodcode").change(function() { "use strict";
-		$(this).after('<div id="loader"><img src="img/loading.gif" alt="Loading Product Price" /></div>');
-		$.get('loadprodmrp.php?psc=' + $(this).val(), function(data) {
-			$("#prodprice").html(data);
-			$('#loader').slideUp(200, function() {
-				$(this).remove();
-			});
-		});	
-    });
-	
-	$("#prodcode").change(function() { "use strict";
-		$(this).after('<div id="loader2"><img src="img/loading.gif" alt="Loading Warranty Date" /></div>');
-		$.get('loadwcenddate.php?prodcode=' + $(this).val(), function(data) {
-			$("#prodwarrenty").html(data);
-			$('#loader2').slideUp(200, function() {
-				$(this).remove();
-			});
-		});	
-    });
-	
-	$("#custcode").on('change', function()  { "use strict";
-		$(this).after('<div id="loader2"><img src="img/loading.gif" alt="Loading SITE Details" /></div>');
-		$.get('loadsite.php?cust=' + $(this).val(), function(data) {
-			$("#sitecode").html(data);
-			$('#loader2').slideUp(200, function() {
-				$(this).remove();
-			});
-		});	
-    });
-	
-	$("#sitecode").on('change', function()  { "use strict";
-		$("#loaderIcon").show();
-		
-	jQuery.ajax({
-	url: "checkamcstatus.php",
-	data:'amcissuedate='+$("#amcissuedate").val() + '&amcenddate='+$("#amcenddate").val() + '&custcode='+$("#custcode").val() + '&sitecode='+$("#sitecode").val(),
-	type: "POST",
-	success:function(data){
-		$("#is-availability-status").html(data);
-		$("#loaderIcon").hide();
-	},
-	error:function (){}
-	});
-    });
-	
-
-});
-</script> 
- 
-<script>
-
-$(document).ready(function() { "use strict";
-
-var count = 0;
-
-  $('.add-service').click(function(e) {
-	  
-	  var notes1 = $("#notes").val();
-	 var amccode = $("#amccode").val();
-	
-    var start = moment($('#amcissuedate').val());
-    var end = moment($('#amcenddate').val());
-    var service = parseFloat($('#service').val()) + 1;
-
-    var interval = (end.diff(start, 'second') + 1) / service;
-	
-	
-		 
-    for (var i = 1; i < service; i++) {
-      var servicedate = moment(start).add(interval * i, 'second').format('YYYY-MM-DD');
-	  
-	  if(servicedate == "") {
-             alert("please fill minimum 1 row");
-             return false;
-         }
-	  
-	  
-	    
-	  var dateresult = "<tr><td><input type='checkbox' class='select-checkbox2' readonly checked='checked' name='record2[]' value="+ servicedate +" id='chk_"+ servicedate +"'></td><td><div class='' id='data_1' ><div class='input-group date '> <span class='input-group-addon'></span><input name='amccode_"+ servicedate +"' value="+ servicedate +" type='date'  required class='form-control' id='amccode_"+ servicedate +"'  ></div></div></td><td><div class='' ><div class='input-group'> <input type='text'  placeholder='Notes - If any' class='form-control' name='notes_"+ servicedate +"' id='notes_"+ servicedate +"' value=" +  notes1  + " ></div></div></td></tr>"
-
-      $("#servicedates").append(dateresult);
-	  count++;
-    }
-
-  });
-
-});
+        function isPrice(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (((event.which != 46 || (event.which == 46 && $(this).val() == '')) ||
+                    $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
 
 
-</script> 
-<script>
-$(document).ready(function(){
-$('#AddNewInstallment').attr('disabled','disabled');
-    $("#AddService").click(function(){ buttonEnabler(); });
-    $("#DeleteService").click(function(){ buttonEnabler(); });
 
-    function buttonEnabler(){
-    var rowCount = $('#servicedates tbody.servicedates tr').length;
-    if(rowCount < 1){
-               $('#AddNewInstallment').attr('disabled','disabled');
-        } else {
-               $('#AddNewInstallment').removeAttr('disabled');
-               }
-    }
-    });
-</script>
-<script type="text/javascript" class="init">
-$(document).ready(function() { "use strict";
+    <script>
+        (function($) {
 
-	var total  = 0;
-	var cVal;
-	var producttotal;
-	var check;
-	
-	
-	$('.select-checkbox').prop('checked'== true, function() {		
-	
-		cVal = $(this).attr('id');
-			
-		
-		
-		if ($('#'+cVal).is(':checked'))
-		{
-			
-			producttotal = parseFloat($('#prodtotal_' + $(this).val()).val());
-			total += producttotal;
-			$('#inttotal').html(total);			
-		}
-		else
-		{
-			
-			
-			producttotal = parseFloat($('#prodtotal_' + $(this).val()).val());
-			total -= producttotal;
-			
-			
-			
-			
-			
-			$('#inttotal').html(total);	
-		}
-		 
-		parseFloat(document.getElementById('totalbill').value = total);
-		
-		
-		
-		
-	});
-	
-	$('#gst').on('keyup', function() {
-     var value1 = parseFloat(document.getElementById("contractamt").value);
-		var value2 = parseFloat(document.getElementById("gst").value);
-		
-		document.getElementById('gstamt').value = value1 * value2/100;
-		var value3 = parseFloat(document.getElementById("gstamt").value);
-		document.getElementById('totalamt').value = value1 + value3;
-		var value4 = parseFloat(document.getElementById("totalamt").value);
-});
+            'use strict';
+
+            if ($.isFunction($.fn['bootstrapDP'])) {
+
+                $(function() {
+
+                    $('#amcissuedate').bootstrapDP().on('changeDate', function(e) {
+
+                        var endDate = new Date(e.date);
+                        endDate.setFullYear(endDate.getFullYear() + 1);
+
+                        $('#amcenddate').bootstrapDP('update', endDate);
+
+                    });
+
+                    $('#amcenddate').bootstrapDP();
 
 
-$('.add-installment').click(function() {
-	var start2 = moment($('#amcissuedate').val());
-    var end2 = moment($('#amcenddate').val());
-    var instalmentdate = parseFloat($('#installment').val()) + 1;
+                });
 
-    var interval2 = (end2.diff(start2, 'second') + 1) / instalmentdate;
+            }
 
-	
-    var value4a = parseFloat(document.getElementById("totalamt").value);
-	var value5 = parseFloat(document.getElementById("installment").value);
-    var interval = value4a/value5;
-	var amccode2 = $("#amccode").val();
-	
-	
-	
+        }).apply(this, [jQuery]);
+    </script>
 
-    for (var i = 0, j = 1; i < value5, j < instalmentdate; i++, j++) {
-      var installment = (i,interval)
-	  var instalmentdate2 = moment(start2).add(interval2 * j, 'second').format('YYYY-MM-DD')
-	  
-	  if(installment == "") {
-             alert("please fill minimum 1 row");
-             return false;
-         }
-	  
-	  var instamt = "<tr><td><input type='checkbox' class='select-checkbox3' readonly checked='checked' name='record3[]' value="+ i +" id='chk2_"+ installment +"'></td><td><div class='' id='data_2' ><div class='input-group date '> <span class='input-group-addon'></span><input name='installdate_"+ i +"' value="+ instalmentdate2 +" type='date'  required class='form-control' id='installdate_"+ i +"'  ></div></div></td><td><div class='input-group'><input name='amccode2_"+ i +"' value="+ installment +" type='text'  required class='form-control' id='amccode2_"+ i +"'  ></div></td></tr>"
-	  
-      $("#installments").append(instamt);
-    }
+    <script>
+        function upperCaseF(a) {
+            "use strict";
+            setTimeout(function() {
+                a.value = a.value.toUpperCase();
+            }, 1);
+        }
+    </script>
 
-  });
-	
-} ) ;
+    <script type="text/javascript">
+        $(document).ready(function() {
+            "use strict";
 
-</script> 
-<script>
-$(document).ready(function(){
-$(':input[type="submit"]').prop('disabled', true);
-    $("#AddNewInstallment").click(function(){ buttonEnabler(); });
-    $("#DeleteInstallment").click(function(){ buttonEnabler(); });
+            $("#prodcode").change(function() {
+                "use strict";
+                $(this).after('<div id="loader"><img src="img/loading.gif" alt="Loading Product Price" /></div>');
+                $.get('loadprodmrp.php?psc=' + $(this).val(), function(data) {
+                    $("#prodprice").html(data);
+                    $('#loader').slideUp(200, function() {
+                        $(this).remove();
+                    });
+                });
+            });
 
-    function buttonEnabler(){
-    var rowCount = $('#installments tbody.installments tr').length;
-    if(rowCount < 1){
-               $('#submit').attr('disabled','disabled');
-        } else {
-               $('#submit').removeAttr('disabled');
-               }
-    }
-    });
-</script>
-<script>
-    
-	 function clearBox(servicedates2)
-{
-    document.getElementById(servicedates2).innerHTML = "";
-}
+            $("#prodcode").change(function() {
+                "use strict";
+                $(this).after('<div id="loader2"><img src="img/loading.gif" alt="Loading Warranty Date" /></div>');
+                $.get('loadwcenddate.php?prodcode=' + $(this).val(), function(data) {
+                    $("#prodwarrenty").html(data);
+                    $('#loader2').slideUp(200, function() {
+                        $(this).remove();
+                    });
+                });
+            });
+
+            $("#custcode").on('change', function() {
+                "use strict";
+                $(this).after('<div id="loader2"><img src="img/loading.gif" alt="Loading SITE Details" /></div>');
+                $.get('loadsite.php?cust=' + $(this).val(), function(data) {
+                    $("#sitecode").html(data);
+                    $('#loader2').slideUp(200, function() {
+                        $(this).remove();
+                    });
+                });
+            });
+
+            $("#sitecode").on('change', function() {
+                "use strict";
+                $("#loaderIcon").show();
+
+                jQuery.ajax({
+                    url: "checkamcstatus.php",
+                    data: 'amcissuedate=' + $("#amcissuedate").val() + '&amcenddate=' + $("#amcenddate").val() + '&custcode=' + $("#custcode").val() + '&sitecode=' + $("#sitecode").val(),
+                    type: "POST",
+                    success: function(data) {
+                        $("#is-availability-status").html(data);
+                        $("#loaderIcon").hide();
+                    },
+                    error: function() {}
+                });
+            });
 
 
-    </script> 
-<script>
-    
-	 function clearBox2(installments2)
-{
-    document.getElementById(installments2).innerHTML = "";
-}
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            "use strict";
+
+            var count = 0;
+
+            $('.add-service').click(function(e) {
+
+                var notes1 = $("#notes").val();
+                var amccode = $("#amccode").val();
+
+                var start = moment($('#amcissuedate').val());
+                var end = moment($('#amcenddate').val());
+                var service = parseFloat($('#service').val()) + 1;
+
+                var interval = (end.diff(start, 'second') + 1) / service;
 
 
+
+                for (var i = 1; i < service; i++) {
+                    var servicedate = moment(start).add(interval * i, 'second').format('YYYY-MM-DD');
+
+                    if (servicedate == "") {
+                        alert("please fill minimum 1 row");
+                        return false;
+                    }
+
+
+
+                    var dateresult = "<tr><td><input type='checkbox' class='select-checkbox2' readonly checked='checked' name='record2[]' value=" + servicedate + " id='chk_" + servicedate + "'></td><td><div class='' id='data_1' ><div class='input-group date '> <span class='input-group-addon'></span><input name='amccode_" + servicedate + "' value=" + servicedate + " type='date'  required class='form-control' id='amccode_" + servicedate + "'  ></div></div></td><td><div class='' ><div class='input-group'> <input type='text'  placeholder='Notes - If any' class='form-control' name='notes_" + servicedate + "' id='notes_" + servicedate + "' value=" + notes1 + " ></div></div></td></tr>"
+
+                    $("#servicedates").append(dateresult);
+                    count++;
+                }
+
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#AddNewInstallment').attr('disabled', 'disabled');
+            $("#AddService").click(function() {
+                buttonEnabler();
+            });
+            $("#DeleteService").click(function() {
+                buttonEnabler();
+            });
+
+            function buttonEnabler() {
+                var rowCount = $('#servicedates tbody.servicedates tr').length;
+                if (rowCount < 1) {
+                    $('#AddNewInstallment').attr('disabled', 'disabled');
+                } else {
+                    $('#AddNewInstallment').removeAttr('disabled');
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            "use strict";
+
+            var total = 0;
+            var cVal;
+            var producttotal;
+            var check;
+
+
+            $('.select-checkbox').prop('checked' == true, function() {
+
+                cVal = $(this).attr('id');
+
+
+
+                if ($('#' + cVal).is(':checked')) {
+
+                    producttotal = parseFloat($('#prodtotal_' + $(this).val()).val());
+                    total += producttotal;
+                    $('#inttotal').html(total);
+                } else {
+
+
+                    producttotal = parseFloat($('#prodtotal_' + $(this).val()).val());
+                    total -= producttotal;
+
+
+
+
+
+                    $('#inttotal').html(total);
+                }
+
+                parseFloat(document.getElementById('totalbill').value = total);
+
+
+
+
+            });
+
+            $('#gst').on('keyup', function() {
+                var value1 = parseFloat(document.getElementById("contractamt").value);
+                var value2 = parseFloat(document.getElementById("gst").value);
+
+                document.getElementById('gstamt').value = value1 * value2 / 100;
+                var value3 = parseFloat(document.getElementById("gstamt").value);
+                document.getElementById('totalamt').value = value1 + value3;
+                var value4 = parseFloat(document.getElementById("totalamt").value);
+            });
+
+
+            $('.add-installment').click(function() {
+                var start2 = moment($('#amcissuedate').val());
+                var end2 = moment($('#amcenddate').val());
+                var instalmentdate = parseFloat($('#installment').val()) + 1;
+
+                var interval2 = (end2.diff(start2, 'second') + 1) / instalmentdate;
+
+
+                var value4a = parseFloat(document.getElementById("totalamt").value);
+                var value5 = parseFloat(document.getElementById("installment").value);
+                var interval = value4a / value5;
+                var amccode2 = $("#amccode").val();
+
+
+
+
+                for (var i = 0, j = 1; i < value5, j < instalmentdate; i++, j++) {
+                    var installment = (i, interval)
+                    var instalmentdate2 = moment(start2).add(interval2 * j, 'second').format('YYYY-MM-DD')
+
+                    if (installment == "") {
+                        alert("please fill minimum 1 row");
+                        return false;
+                    }
+
+                    var instamt = "<tr><td><input type='checkbox' class='select-checkbox3' readonly checked='checked' name='record3[]' value=" + i + " id='chk2_" + installment + "'></td><td><div class='' id='data_2' ><div class='input-group date '> <span class='input-group-addon'></span><input name='installdate_" + i + "' value=" + instalmentdate2 + " type='date'  required class='form-control' id='installdate_" + i + "'  ></div></div></td><td><div class='input-group'><input name='amccode2_" + i + "' value=" + installment + " type='text'  required class='form-control' id='amccode2_" + i + "'  ></div></td></tr>"
+
+                    $("#installments").append(instamt);
+                }
+
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(':input[type="submit"]').prop('disabled', true);
+            $("#AddNewInstallment").click(function() {
+                buttonEnabler();
+            });
+            $("#DeleteInstallment").click(function() {
+                buttonEnabler();
+            });
+
+            function buttonEnabler() {
+                var rowCount = $('#installments tbody.installments tr').length;
+                if (rowCount < 1) {
+                    $('#submit').attr('disabled', 'disabled');
+                } else {
+                    $('#submit').removeAttr('disabled');
+                }
+            }
+        });
+    </script>
+    <script>
+        function clearBox(servicedates2) {
+            document.getElementById(servicedates2).innerHTML = "";
+        }
+    </script>
+    <script>
+        function clearBox2(installments2) {
+            document.getElementById(installments2).innerHTML = "";
+        }
     </script>
     <?php include('footer.php'); ?>
