@@ -130,10 +130,10 @@
 								</li>
 								
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/product_amc" class="nav-link">Product AMC</a>
+									<a href="/AMC/index.php/welcome/data_product_amc" class="nav-link">Product AMC</a>
 								</li>
 								<li class="nav-item">
-									<a href="/AMC/index.php/welcome/service_amc" class="nav-link">Service AMC</a>
+									<a href="/AMC/index.php/welcome/data_service_amc" class="nav-link">Service AMC</a>
 								</li>
 								<li class="nav-item">
 									<a href="/AMC/index.php/welcome/active_amc" class="nav-link">Active AMC's</a>
