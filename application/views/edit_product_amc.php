@@ -1,4 +1,133 @@
-<?php include('header.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>AMC | Admin</title>
+	<!-- core:css -->
+	<link rel="stylesheet" href="../../assets/vendors/core/core.css">
+	<!-- endinject -->
+	<!-- plugin css for this page -->
+	<link rel="stylesheet" href="../../assets/vendors/jquery-steps/jquery.steps.css">
+	<link rel="stylesheet" href="../../assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+	<!-- end plugin css for this page -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="../../assets/fonts/feather-font/css/iconfont.css">
+	<link rel="stylesheet" href="../../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+	<!-- endinject -->
+	<!-- Layout styles -->
+	<link rel="stylesheet" href="../../assets/css/demo_1/style.css">
+	<!-- End layout styles -->
+	<link rel="shortcut icon" href="../../assets/images/favicon.png" />
+
+	
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/animate/animate.css">
+
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/font-awesome/css/all.css" />
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/magnific-popup/magnific-popup.css" />
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/jquery-ui/jquery-ui.css" />
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/jquery-ui/jquery-ui.theme.css" />
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/morris/morris.css" />
+		
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/select2/css/select2.css" />
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/select2-bootstrap-theme/select2-bootstrap.min.css" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/css/theme.css" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/css/skins/default.css" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/css/custom.css">
+		
+		
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/summernote/summernote-bs4.css" />
+
+		<!-- Head Libs -->
+		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/modernizr/modernizr.js"></script>
+		
+		
+		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/datatables/media/css/dataTables.bootstrap4.css" />
+		
+		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/jquery/jquery.js"></script>
+		
+		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/jquery-ui/jquery-ui.js"></script>
+		
+		
+		
+		
+		
+		
+      
+<style> 
+
+.dataTables_wrapper table,th,td { font-size: 12px }
+a[target="_blank"]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+}
+</style>   
+      
+<script type="text/javascript">
+$(document).keydown(function(e) {
+    if (e.keyCode == 27) return false;
+});
+	
+
+</script>
+<div class="modal" id="GeneralInfo" tabindex="-1" role="dialog">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title">Enter Item License Key</h5>
+													
+												</div>
+												<div class="modal-body">
+												
+																								
+												
+			<form action="http://xlinkinfocom.com/amc-call-management-system/envatouser/API/validate.php" method="POST" class="form-horizontal">
+													<div class="form-group row">
+											<label class="col-sm-4 control-label text-sm-left pt-2">API Key </label>
+											<div class="col-sm-8">
+												<input name="apikey" placeholder="xxxxxxxx" autocomplete="off" type="text" required class="form-control required" onkeydown="" id="apikey">
+												
+												
+            <input type="hidden" name="lic_url2" class="form-control" placeholder="url" value="http://www.xlinkinfocom.com/amc-call-management-system/app/admin/amcwithoutwc.php" />
+			
+			<input type="hidden" name="lic_url" class="form-control" placeholder="url" value="http://www.xlinkinfocom.com" />
+												
+											</div>
+										</div>
+										<div class="alert alert-success" role="alert">
+										<p>You are installing this application in <b><?php echo $referer; ?></b></p><p>How to get API Key ? <a target="_blank" href="http://xlinkinfocom.com/amc-call-management-system/#activate_application">Click Here to get details</a></p>
+										</div>													
+												</div>
+												<div class="modal-footer">
+																								<button type="submit" name="confirm" class="btn btn-primary">Confirm</button>
+												</div>
+												</form>
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+</head>
 <?php include('body.php'); ?>
 <div class="page-content">
     <div class="row">
@@ -7,7 +136,7 @@
                 <div class="col-md-12 stretch-card">
                     <div class="card card-custom">
                         <div class="card-body">
-                            <h6 class="card-title"><h4>Issue Product & Service of AMC:</h4></h6><br>
+                            <h6 class="card-title">Issue Product & Service of AMC:</h6><br>
                             <form method="post" action="<?php echo base_url().'index.php/welcome/productserviceamc';?>">
                               <div class="row">
                                   <div class="col-lg-5 my-2 ">
@@ -90,14 +219,14 @@
                 </div><!-- Row -->
                 <div class="separator separator-dashed my-10">
                 </div>
-                <?php include('jscript.php'); ?>              
+                             
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="tabs tabs-primary">
                       <ul class="nav nav-tabs nav-justified ">
-                        <li class="nav-item active  border border-dark"> <a class="nav-link" href="#product_tab" data-toggle="tab"><i class="fas fa-tags"></i><h4> Products Under AMC</h4></a> </li>
-                        <li class="nav-item active border border-dark"> <a class="nav-link" href="#service_tab" data-toggle="tab"><i class="fas fa-wrench"></i><h4> Service Schedule</h4></a> </li>
-                        <li class="nav-item active border border-dark"> <a class="nav-link" href="#payment_tab" data-toggle="tab"><i class="fas fa-rupee-sign"></i><h4> Schedule Payment</h4></a> </li>
+                        <li class="nav-item active  border border-dark"> <a class="nav-link" href="#product_tab" data-toggle="tab"><i data-feather="tag"></i><h4> Products Under AMC</h4></a> </li>
+                        <li class="nav-item active border border-dark"> <a class="nav-link" href="#service_tab" data-toggle="tab"><i data-feather="settings"></i><h4> Service Schedule</h4></a> </li>
+                        <li class="nav-item active border border-dark"> <a class="nav-link" href="#payment_tab" data-toggle="tab"><i data-feather="dollar-sign"></i><h4> Schedule Payment</h4></a> </li>
                       </ul>
                       <div class="tab-content">
                         <div id="product_tab" class="tab-pane active">
@@ -181,7 +310,7 @@
                                       <td><div class="form-group" >
                                           <input name="prodtotal2" type="text" required class="form-control" id="prodtotal" placeholder="Total Value" readonly  >
                                         </div></td>
-                                      <td ><div class="form-group" ><button type="button" name="reset" value="Add new row" onclick="prodtotalval()" class="btn btn-warning add-row"><i class="fa fa-plus"></i> Add Item</button>
+                                      <td ><div class="form-group" ><button type="button" name="reset" value="Add new row" onclick="prodtotalval()" class="btn btn-warning add-row"><i data-feather="plus"></i> Add Item</button>
                                       </div></td>
                                     </tr>
                                   </tbody>
@@ -202,7 +331,7 @@
                                     </tbody>
                                   </table>
                                   <br>
-                                  <button type="button" class="btn btn-danger delete-row"><i class="fa fa-trash"></i> Delete UN-CHECKED Products</button>
+                                  <button type="button" class="btn btn-danger delete-row"><i data-feather="trash"></i> Delete UN-CHECKED Products</button>
                                 </div>
                               </div>                          </div>
                         </div>
@@ -241,7 +370,7 @@
                         
                         <div class="col">
                           <div class="input-group ">
-                                          <button type="button" name="submit" value="Add new row" id="AddService"  class="btn btn-info add-service"><i class="fa fa-plus"></i> Set Service</button>
+                                          <button type="button" name="submit" value="Add new row" id="AddService"  class="btn btn-info add-service"><i data-feather="plus"></i> Set Service</button>
                                         </div>
                         </div>
                       </div>
@@ -253,7 +382,7 @@
                         
                         <div class="col">
                           <div class="input-group ">
-                                          <button type="button" name="reset" id="DeleteService" value="Clear Fields" onclick="clearBox('servicedates2')" class="btn btn-warning clear-row"><i class="fa fa-trash"></i> Clear All</button>
+                                          <button type="button" name="reset" id="DeleteService" value="Clear Fields" onclick="clearBox('servicedates2')" class="btn btn-warning clear-row"><i data-feather="x-octagon"></i> Clear All</button>
                                         </div>
                         </div>
                       </div></td>
@@ -328,13 +457,13 @@
                                       </div></td>
                                     <td ><div class="form-group row" >
                                         <div class="col ">
-                                          <button type="button" name="submit" id="AddNewInstallment" value="Set Installment"  class="btn btn-info add-installment"><i class="fa fa-plus"></i> Set Installment</button>
+                                          <button type="button" name="submit" id="AddNewInstallment" value="Set Installment"  class="btn btn-info add-installment"><i data-feather="plus"></i> Set Installment</button>
                                         </div>
                                       </div></td>
                                     
                                     <td ><div class="form-group row" >
                                         <div class="col ">
-                                          <button type="button" name="reset" id="DeleteInstallment" value="Clear Fields" onclick="clearBox2('installments2')" class="btn btn-warning clear-row"><i class="fa fa-trash"></i> Clear All</button>
+                                          <button type="button" name="reset" id="DeleteInstallment" value="Clear Fields" onclick="clearBox2('installments2')" class="btn btn-warning clear-row"><i data-feather="x-octagon"></i> Clear All</button>
                                         </div>
                                       </div></td>
                                   </tr>
