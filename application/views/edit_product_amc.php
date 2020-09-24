@@ -24,7 +24,6 @@
 
 	
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/bootstrap/css/bootstrap.css" />
 		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/animate/animate.css">
 
 		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/font-awesome/css/all.css" />
@@ -39,17 +38,11 @@
 		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/select2/css/select2.css" />
 		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/select2-bootstrap-theme/select2-bootstrap.min.css" />
 
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/css/theme.css" />
-
-		<!-- Skin CSS -->
-		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/css/skins/default.css" />
-
+		
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/css/custom.css">
 		
 		
-		<link rel="stylesheet" href="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/summernote/summernote-bs4.css" />
 
 		<!-- Head Libs -->
 		<script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/modernizr/modernizr.js"></script>
@@ -136,7 +129,7 @@ $(document).keydown(function(e) {
                 <div class="col-md-12 stretch-card">
                     <div class="card card-custom">
                         <div class="card-body">
-                            <h6 class="card-title">Issue Product & Service of AMC:</h6><br>
+                            <h6 class="card-title"><h4>Issue Product & Service of AMC:</h4></h6><br>
                             <form method="post" action="<?php echo base_url().'index.php/welcome/productserviceamc';?>">
                               <div class="row">
                                   <div class="col-lg-5 my-2 ">
