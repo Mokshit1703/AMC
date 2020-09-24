@@ -285,19 +285,20 @@
                                 </div>
                             </div>
                         </div>
-                        <footer class="card-footer">
+                        
                             <div class="row justify-content-end">
                                 <div class="col-sm-12">
                                     <button class="btn btn-success " id="submit" type="submit" name="submit" value="Save and Submit" disabled=""><i class="fa fa-save"></i>&nbsp;&nbsp;<span class="bold">Submit</span></button>
                                     <button type="reset" class="btn btn-default">Reset</button>
                                 </div>
                             </div>
-                        </footer>
+                        
                     </form>
                 </div>
             </section>
         </div>
     </div>
+</div>
     <!-- Vendor -->
     <script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
     <script src="http://www.xlinkinfocom.com/amc-call-management-system/app/source/vendor/popper/umd/popper.min.js"></script>
